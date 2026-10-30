@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 (function () {
   function initFanDeck() {
     const stage = document.getElementById('arc-fandeck-stage');
@@ -138,7 +138,7 @@
     initFanDeck();
   }
 })();
-=======
+
 ﻿(function () {
   function initFanDeck() {
     const stage = document.getElementById('arc-fandeck-stage');
@@ -276,4 +276,4 @@
     initFanDeck();
   }
 })();
->>>>>>> aab5d36bf9f4dda49b5e76039159195a1b7b8c27
+aab5d36bf9f4dda49b5e76039159195a1b7b8c27
