@@ -197,12 +197,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (hasError) return;
 
+      const formContent = document.getElementById('contact-form-content');
       const successNotice = document.getElementById('contact-success-notice');
-      contactForm.style.display = 'none';
+      if (formContent) formContent.style.setProperty('display', 'none', 'important');
       if (successNotice) {
-        successNotice.style.display = 'block';
-        successNotice.scrollIntoView({ behavior: 'smooth' });
+        successNotice.style.setProperty('display', 'flex', 'important');
+        successNotice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
+
+    const resetBtn = document.getElementById('contact-reset-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        contactForm.reset();
+        const formContent = document.getElementById('contact-form-content');
+        const successNotice = document.getElementById('contact-success-notice');
+        if (formContent) formContent.style.removeProperty('display');
+        if (successNotice) successNotice.style.setProperty('display', 'none', 'important');
+      });
+    }
   }
 });

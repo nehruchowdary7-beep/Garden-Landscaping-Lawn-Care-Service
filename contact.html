@@ -214,21 +214,12 @@
           </div>
 
           <div class="col-lg-7 d-flex flex-column" data-reveal="right">
+            <div class="form-card h-100 d-flex flex-column position-relative">
+              <div id="contact-form-content" class="d-flex flex-column flex-grow-1">
+                <h3 style="margin-bottom:8px;">Contact Details</h3>
+                <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:24px;">Please provide your contact details below so our team can reach out with service estimates and availability.</p>
 
-            <div id="contact-success-notice" class="form-card text-center mb-4" style="display:none; border:2px solid #22c55e; background:rgba(34, 197, 94, 0.08);">
-              <div style="width:54px; height:54px; border-radius:50%; background:#22c55e; color:#ffffff; display:inline-flex; align-items:center; justify-content:center; margin-bottom:12px;">
-                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <h3>Contact Details Received!</h3>
-              <p>Thank you for submitting your contact details. One of our landscape specialists will review your information and reach out within 2 business hours.</p>
-              <a href="index.html" class="btn btn-secondary btn-sm">Back to Home</a>
-            </div>
-
-            <div class="form-card h-100 d-flex flex-column">
-              <h3 style="margin-bottom:8px;">Contact Details</h3>
-              <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:24px;">Please provide your contact details below so our team can reach out with service estimates and availability.</p>
-
-              <form id="contact-form" class="d-flex flex-column flex-grow-1" novalidate>
+                <form id="contact-form" class="d-flex flex-column flex-grow-1" novalidate>
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <label for="contact-name" class="form-label">Full Name *</label>
@@ -309,6 +300,19 @@
                 </button>
               </form>
             </div>
+
+            <div id="contact-success-notice" class="flex-column align-items-center justify-content-center text-center flex-grow-1 h-100 py-4" style="display:none;">
+              <div style="width:72px; height:72px; border-radius:50%; background:rgba(34, 197, 94, 0.12); color:#22c55e; display:inline-flex; align-items:center; justify-content:center; margin-bottom:20px; border:2px solid rgba(34, 197, 94, 0.35);">
+                <svg class="icon-lg" style="width:36px; height:36px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 style="font-size:1.75rem; font-weight:700; margin-bottom:12px; color:var(--text-main);">Contact Details Received!</h3>
+              <p style="max-width:480px; margin:0 auto 28px; color:var(--text-secondary); line-height:1.65; font-size:1.02rem;">Thank you for submitting your contact details. One of our landscape specialists will review your information and reach out within 2 business hours.</p>
+              <div class="d-flex flex-wrap gap-3 justify-content-center">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <button type="button" id="contact-reset-btn" class="btn btn-secondary">Submit Another Inquiry</button>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
