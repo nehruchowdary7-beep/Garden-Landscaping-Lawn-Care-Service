@@ -1,12 +1,18 @@
 html, body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-main, section, .container {
+main {
+  max-width: 100% !important;
+  overflow-x: clip !important;
+  box-sizing: border-box !important;
+}
+
+section, .container {
   max-width: 100% !important;
   box-sizing: border-box !important;
 }
@@ -120,58 +126,19 @@ main, section, .container {
 .gallery-img-wrap img,
 .project-showcase-img img,
 .botanical-card-media img,
-.monolith-card-img,
-.hero-image-wrap img {
+.monolith-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
-@media (min-width: 1200px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-  .sd-scope-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .sd-process-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-  .sd-pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .pricing-cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
-  }
-  .team-grid-modern {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-  .studios-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .monolith-gallery-deck {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-  .gallery-section5-row {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
+.hero-image-wrap img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 640px) {
   .service-card,
   .sd-scope-card,
   .sd-process-card,
@@ -194,77 +161,129 @@ main, section, .container {
   }
 }
 
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (min-width: 1281px) {
+  .hero-image-wrap img {
+    height: 400px !important;
+  }
+  .container {
+    max-width: 1380px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .site-header .container,
+  .site-footer .container {
+    max-width: 1440px !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+  }
   .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 32px !important;
   }
   .sd-scope-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
   }
   .sd-process-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 24px !important;
   }
   .sd-pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
   }
   .pricing-cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .monolith-gallery-deck {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 26px !important;
   }
   .team-grid-modern {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 24px !important;
   }
   .studios-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
   }
   .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+  }
+  .monolith-gallery-deck {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 32px !important;
   }
   .gallery-section5-row {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
   }
 }
 
-@media (max-width: 992px) {
-  .hero-section {
-    min-height: auto;
-    padding: 44px 0 36px;
-  }
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+@media (min-width: 1024px) and (max-width: 1280px) {
   .hero-image-wrap img {
-    height: 340px;
+    height: 380px !important;
   }
-  .hero-visual {
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
+  .container {
+    max-width: 1200px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
   }
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .site-header .container,
+  .site-footer .container {
+    max-width: 1240px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
   }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
   }
-  .footer-about {
-    grid-column: span 2;
+  .sd-scope-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 22px !important;
   }
+  .sd-process-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px !important;
+  }
+  .sd-pricing-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+  .pricing-cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+  .monolith-gallery-deck {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 22px !important;
+  }
+  .team-grid-modern {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px !important;
+  }
+  .studios-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 22px !important;
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 22px !important;
+  }
+  .gallery-section5-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 22px !important;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 1024px) {
   .menu-toggle {
     display: flex;
     align-items: center;
@@ -307,7 +326,7 @@ main, section, .container {
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    z-index: 998;
+    z-index: 1001;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.25s ease, visibility 0.25s ease;
@@ -321,32 +340,75 @@ main, section, .container {
   body.menu-open {
     overflow: hidden !important;
   }
+}
 
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 24px;
+@media (min-width: 640px) and (max-width: 1024px) {
+  .container {
+    max-width: 960px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
-  .sd-scope-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+  .g-5, .gx-5 {
+    --bs-gutter-x: 2rem !important;
   }
-  .sd-process-grid {
+  .site-header .container,
+  .site-footer .container {
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .hero-section {
+    min-height: auto;
+    padding: 44px 0 36px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-image-wrap img {
+    height: 320px !important;
+  }
+  .hero-visual {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .stats-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px;
   }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px;
+  }
+  .footer-about {
+    grid-column: span 2;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+  .sd-scope-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px !important;
+  }
+  .sd-process-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
   .sd-pricing-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+    gap: 22px !important;
   }
   .pricing-cards-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+    gap: 22px !important;
     max-width: 720px;
     margin: 0 auto;
   }
   .monolith-gallery-deck {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 24px;
+    gap: 24px !important;
     max-width: 780px;
     margin: 36px auto 0;
   }
@@ -356,35 +418,35 @@ main, section, .container {
   }
   .reviews-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+    gap: 22px !important;
   }
   .team-grid-modern {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+    gap: 22px !important;
   }
   .studios-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+    gap: 22px !important;
   }
   .service-steps-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+    gap: 22px !important;
   }
   .consult-steps-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px;
+    gap: 20px !important;
   }
   .coverage-zones-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px;
+    gap: 20px !important;
   }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 24px;
+    gap: 24px !important;
   }
   .gallery-section5-row {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px;
+    gap: 22px !important;
   }
   .botanical-bento-grid {
     grid-template-columns: 1fr !important;
@@ -410,7 +472,7 @@ main, section, .container {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 639.98px) {
   .site-header {
     width: 100% !important;
     max-width: 100% !important;
@@ -476,8 +538,8 @@ main, section, .container {
   }
 
   .container {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-left: auto !important;
@@ -529,7 +591,7 @@ main, section, .container {
     display: none;
   }
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .hero-section {
@@ -645,7 +707,7 @@ main, section, .container {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .footer-about {
     grid-column: span 1;
@@ -706,12 +768,12 @@ main, section, .container {
   .botanical-bento-grid {
     grid-template-columns: 1fr !important;
     width: 100% !important;
-    max-width: 520px !important;
+    max-width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    gap: 20px !important;
+    gap: 18px !important;
   }
 
   .service-card,
@@ -736,145 +798,6 @@ main, section, .container {
     margin-right: auto !important;
     height: auto !important;
     box-sizing: border-box !important;
-  }
-
-  .monolith-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: 480px !important;
-    padding: 22px 18px !important;
-    border-radius: 20px !important;
-  }
-  .monolith-title {
-    font-size: 1.25rem !important;
-  }
-  .monolith-desc {
-    font-size: 0.88rem !important;
-    line-height: 1.5 !important;
-    margin-bottom: 16px !important;
-  }
-  .monolith-index-watermark {
-    font-size: 2.2rem !important;
-  }
-  .monolith-action-btn {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-
-  .contact-info-card,
-  .form-card {
-    width: 100% !important;
-    max-width: 520px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    height: auto !important;
-    padding: 26px 20px !important;
-  }
-  .contact-info-card a[href^="mailto:"] {
-    word-break: break-all !important;
-    overflow-wrap: anywhere !important;
-  }
-  .contact-map-card {
-    width: 100% !important;
-    height: 230px !important;
-    min-height: 230px !important;
-    max-height: 230px !important;
-    flex: none !important;
-    margin-top: 22px !important;
-  }
-  .contact-map-card iframe {
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 230px !important;
-    border: 0;
-  }
-  .contact-map-badge {
-    padding: 8px 12px !important;
-    font-size: 0.78rem !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .section-services-arc {
-    overflow: hidden !important;
-    padding: 48px 0 56px !important;
-  }
-  .arc-fandeck-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 26px auto 0 !important;
-    overflow: hidden !important;
-  }
-  .arc-fandeck-stage {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 380px !important;
-    margin: 0 auto !important;
-  }
-  .arc-card {
-    left: 50% !important;
-    width: 180px !important;
-    height: 320px !important;
-    margin-top: -160px !important;
-    margin-left: -90px !important;
-    border-radius: 20px !important;
-  }
-  .arc-card-inner {
-    padding: 14px 14px !important;
-    border-radius: 20px !important;
-  }
-  .arc-card-title {
-    font-size: 0.96rem !important;
-    margin-bottom: 4px !important;
-  }
-  .arc-card-desc {
-    font-size: 0.8rem !important;
-    line-height: 1.4 !important;
-  }
-  .arc-card-num {
-    font-size: 1.9rem !important;
-  }
-  .arc-nav-row {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin-top: 20px !important;
-    gap: 18px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .services-grid,
-  .sd-scope-grid,
-  .sd-process-grid,
-  .process-grid,
-  .sd-pricing-grid,
-  .pricing-cards-grid,
-  .monolith-gallery-deck,
-  .reviews-grid,
-  .team-grid-modern,
-  .studios-grid,
-  .service-steps-grid,
-  .consult-steps-grid,
-  .coverage-zones-grid,
-  .gallery-grid,
-  .gallery-section5-row,
-  .alacarte-specimen-grid,
-  .contact-info-card,
-  .form-card {
-    max-width: 100% !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    gap: 18px !important;
   }
 
   .service-card-body,
@@ -946,6 +869,109 @@ main, section, .container {
   .sd-estimate-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .monolith-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 480px !important;
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+  }
+  .monolith-title {
+    font-size: 1.25rem !important;
+  }
+  .monolith-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+  }
+  .monolith-index-watermark {
+    font-size: 2.2rem !important;
+  }
+  .monolith-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .contact-info-card,
+  .form-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: auto !important;
+    padding: 26px 20px !important;
+  }
+  .contact-info-card a[href^="mailto:"] {
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+  .contact-map-card {
+    width: 100% !important;
+    height: 230px !important;
+    min-height: 230px !important;
+    max-height: 230px !important;
+    flex: none !important;
+    margin-top: 22px !important;
+  }
+  .contact-map-card iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 230px !important;
+    border: 0;
+  }
+  .contact-map-badge {
+    padding: 8px 12px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .section-services-arc {
+    overflow: hidden !important;
+    padding: 48px 0 56px !important;
+  }
+  .arc-fandeck-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 26px auto 0 !important;
+    overflow: hidden !important;
+  }
+  .arc-fandeck-stage {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 380px !important;
+    margin: 0 auto !important;
+  }
+  .arc-card {
+    left: 50% !important;
+    width: 180px !important;
+    height: 320px !important;
+    margin-top: -160px !important;
+    margin-left: -90px !important;
+    border-radius: 20px !important;
+  }
+  .arc-card-inner {
+    padding: 14px 14px !important;
+    border-radius: 20px !important;
+  }
+  .arc-card-title {
+    font-size: 0.96rem !important;
+    margin-bottom: 4px !important;
+  }
+  .arc-card-desc {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+  }
+  .arc-card-num {
+    font-size: 1.9rem !important;
+  }
+  .arc-nav-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    gap: 18px !important;
   }
 }
 

@@ -312,7 +312,7 @@ html[dir="rtl"] .home2-hero-overlay {
   align-items: stretch;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .estate-service-card {
     height: 275px;
   }
@@ -1084,7 +1084,7 @@ html[dir="rtl"] .home2-hero-overlay {
   background: rgba(27, 77, 62, 0.12);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .home2-hero {
     min-height: auto;
     padding: 60px 0 54px;
@@ -1153,7 +1153,7 @@ html[dir="rtl"] .home2-hero-overlay {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 639.98px) {
   .eco-visual-frame {
     height: 260px;
   }
@@ -1615,14 +1615,14 @@ html[dir="rtl"] .home2-hero-overlay {
   stroke: #ffffff;
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .monolith-gallery-deck {
     grid-template-columns: repeat(2, 1fr);
     max-width: 780px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 639.98px) {
   .monolith-gallery-deck {
     grid-template-columns: 1fr;
     max-width: 480px;

@@ -14,14 +14,15 @@
       const w = window.innerWidth;
       if (w < 400) {
         return { spreadX: 24, rotStep: 3.5, arcY: 4, scaleStep: 0.09, zStep: 16 };
-      } else if (w < 600) {
+      } else if (w < 640) {
         return { spreadX: 34, rotStep: 5, arcY: 7, scaleStep: 0.08, zStep: 24 };
-      } else if (w < 992) {
+      } else if (w <= 1024) {
         return { spreadX: 72, rotStep: 7.5, arcY: 14, scaleStep: 0.07, zStep: 35 };
-      } else if (w < 1200) {
+      } else if (w <= 1280) {
         return { spreadX: 96, rotStep: 8, arcY: 18, scaleStep: 0.06, zStep: 45 };
       } else {
         return { spreadX: 115, rotStep: 8.5, arcY: 20, scaleStep: 0.05, zStep: 55 };
+      };
       }
     }
 

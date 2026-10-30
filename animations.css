@@ -66,18 +66,13 @@
   transform: translateY(0);
 }
 
-[data-reveal="left"] {
-  transform: translateX(-30px);
-}
-[data-reveal="left"].is-revealed {
-  transform: translateX(0);
-}
-
+[data-reveal="left"],
 [data-reveal="right"] {
-  transform: translateX(30px);
+  transform: translateY(20px);
 }
+[data-reveal="left"].is-revealed,
 [data-reveal="right"].is-revealed {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .interactive-card {
@@ -306,7 +301,7 @@ body.is-preloading {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 639.98px) {
   [data-reveal="left"],
   [data-reveal="right"] {
     transform: translateY(20px);

@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 992 && siteNav.classList.contains('is-open')) {
+      if (window.innerWidth > 1024 && siteNav.classList.contains('is-open')) {
         closeNav();
       }
     });
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!toggle) return;
 
     toggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 992) {
+      if (window.innerWidth <= 1024) {
         e.preventDefault();
         const isOpen = dropdown.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', String(isOpen));

@@ -209,7 +209,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 639.98px) {
   .pricing-hero {
     min-height: auto;
     padding: 60px 0 50px;
@@ -228,7 +228,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .pricing-cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     max-width: 640px;
@@ -739,14 +739,14 @@
   color: #0b1410 !important;
 }
 
-@media (max-width: 991px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .alacarte-specimen-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 639.98px) {
   .alacarte-specimen-grid {
     grid-template-columns: 1fr;
     gap: 20px;

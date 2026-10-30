@@ -649,7 +649,7 @@ html[dir="rtl"] .about-hero-stat-chip {
   right: -6px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 639.98px) {
   .about-hero-visual {
     padding: 8px;
     max-width: 100%;
@@ -900,14 +900,14 @@ html[dir="rtl"] .about-hero-stat-chip {
   border-color: rgba(74, 222, 128, 0.25);
 }
 
-@media (max-width: 992px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .team-grid-modern {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 639.98px) {
   .team-grid-modern {
     grid-template-columns: 1fr;
     max-width: 360px;
@@ -1189,7 +1189,7 @@ html[dir="rtl"] .timeline-vertical-card {
   color: #4ade80;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .about-hero {
     min-height: auto;
     height: auto;
@@ -1200,7 +1200,7 @@ html[dir="rtl"] .timeline-vertical-card {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 639.98px) {
   .timeline-spine-line {
     left: 24px;
     transform: none;

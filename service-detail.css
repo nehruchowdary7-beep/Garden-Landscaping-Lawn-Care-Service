@@ -726,7 +726,7 @@
   margin-top: 32px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .sd-hero {
     padding: 70px 0 60px;
     min-height: auto;
@@ -742,7 +742,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 639.98px) {
   .sd-hero-actions {
     flex-direction: column;
     width: 100%;
