@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
@@ -672,3 +673,681 @@ Cold-pressed ocean kelp, humic acid, and compost teas feed beneficial undergroun
   </footer>
 </body>
 </html>
+=======
+﻿<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VerdantCraft | Premium Garden Landscaping &amp; Lawn Care Service</title>
+  <meta name="description" content="Transform your outdoor space with VerdantCraft. Certified landscape architecture, precision lawn mowing, seasonal yard maintenance, and custom hardscaping.">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <script src="config.js"></script>
+  <script src="theme.js"></script>
+  <script src="validation.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body data-page="index.html" class="is-preloading">
+
+  <div id="page-preloader" class="page-preloader" aria-hidden="true">
+
+    <div class="preloader-curtain preloader-curtain-top"></div>
+
+    <div class="preloader-curtain preloader-curtain-bottom"></div>
+
+    <div class="preloader-center">
+      <div class="preloader-brand-box">
+        <div class="preloader-icon-glow">
+          <div class="preloader-glow-ring"></div>
+          <svg class="preloader-leaf-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+        </div>
+        <div class="preloader-title">Verdant<span>Craft</span></div>
+        <div class="preloader-subtitle">LANDSCAPING &amp; LAWN CARE</div>
+      </div>
+
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar-track">
+          <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+        </div>
+        <div class="preloader-status-meta">
+          <span class="preloader-quote">Opening Living Sanctuary...</span>
+          <span class="preloader-counter" id="preloader-counter">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var preloader = document.getElementById('page-preloader');
+      if (!preloader) return;
+      var barFill = document.getElementById('preloader-bar-fill');
+      var counter = document.getElementById('preloader-counter');
+
+      var startTime = performance.now();
+      var duration = 950; // Smooth fill duration in ms
+
+      function step(currentTime) {
+        var elapsed = currentTime - startTime;
+        var percent = Math.min(100, Math.floor((elapsed / duration) * 100));
+
+        if (barFill) barFill.style.width = percent + '%';
+        if (counter) counter.textContent = percent + '%';
+
+        if (percent < 100) {
+          requestAnimationFrame(step);
+        } else {
+          // Progress reached 100%
+          setTimeout(function() {
+            // Stage 1: Fade out center badge
+            preloader.classList.add('fade-content');
+
+            setTimeout(function() {
+              // Stage 2: Dramatic shutter split open
+              preloader.classList.add('open-shutter');
+              var hero = document.querySelector('.hero-section');
+              if (hero) hero.classList.add('hero-opening-reveal');
+
+              setTimeout(function() {
+                // Stage 3: Complete and cleanup
+                preloader.classList.add('is-finished');
+                document.body.classList.remove('is-preloading');
+              }, 920);
+            }, 260);
+          }, 140);
+        }
+      }
+
+      requestAnimationFrame(step);
+    })();
+  </script>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="VerdantCraft Home">
+        <div class="brand-logo-badge">
+          <img src="logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
+          <img src="logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
+        </div>
+        <div>
+          <span class="brand-name">Verdant<span>Craft</span></span>
+          <span class="brand-sub">LANDSCAPING &amp; LAWN CARE</span>
+        </div>
+      </a>
+
+      <nav class="site-nav" id="main-nav" aria-label="Main Navigation">
+        <div class="nav-item-dropdown">
+          <a href="index.html" class="nav-link nav-dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+            <span>Home</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu-custom" role="menu">
+            <a href="index.html" class="dropdown-item-custom active" role="menuitem">
+              <span class="dropdown-item-title">Home 1</span>
+              <span class="dropdown-item-desc">Living Sanctuary (Residential)</span>
+            </a>
+            <a href="index-2.html" class="dropdown-item-custom" role="menuitem">
+              <span class="dropdown-item-title">Home 2</span>
+              <span class="dropdown-item-desc">Architectural Estates &amp; Commercial</span>
+            </a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="dir-btn direction-control" title="Click to change to RTL" aria-label="Toggle text direction">
+          <span class="dir-text">RTL</span>
+        </button>
+
+        <button type="button" class="icon-btn theme-control" title="Switch theme" aria-label="Toggle dark mode">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="4"/>
+          </svg>
+        </button>
+
+        <a href="contact.html#contact-form-section" class="btn btn-primary d-none d-sm-inline-flex">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Get Free Quote</span>
+        </a>
+
+        <button type="button" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero-section" aria-label="Hero Introduction">
+      <div class="container hero-grid">
+        <div class="hero-content" data-reveal="left">
+          <span class="eyebrow">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Eco-Friendly Lawn &amp; Landscape Architecture
+          </span>
+          <h1>Transform Your Yard Into a <span class="text-gradient">Living Sanctuary</span></h1>
+          <p class="lead">
+            From precision weekly mowing and smart irrigation to award-winning custom stone patios and seasonal cleanups. We bring healthy vibrance and timeless architectural elegance to your outdoor living spaces.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="book-now.html" class="btn btn-primary btn-lg">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Get Free Instant Estimate</span>
+            </a>
+            <a href="services.html" class="btn btn-secondary btn-lg">
+              <span>Explore All Services</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <div class="trust-badges">
+            <div class="trust-badge-item">
+              <div class="trust-badge-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <strong>100% Licensed &amp; Insured</strong><br>
+                <span>Full property protection</span>
+              </div>
+            </div>
+            <div class="trust-badge-item">
+              <div class="trust-badge-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <strong>Satisfaction Guaranteed</strong><br>
+                <span>We re-service if not delighted</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal="right">
+          <div class="hero-image-wrap">
+            <img src="hero-patio-sanctuary.jpg" alt="Luxury modern outdoor patio living area with fire pit and manicured garden" loading="eager">
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Core Landscaping and Lawn Services">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow">Expert Solutions</span>
+          <h2 class="heading">Comprehensive Outdoor Care For Every Season</h2>
+          <p>
+            Whether your lawn needs routine precision edging, an irrigation overhaul, or a complete backyard design metamorphosis, our skilled arborists and landscapers have you covered.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card interactive-card" data-reveal>
+            <div class="service-card-image">
+              <span class="service-badge">Weekly / Bi-Weekly</span>
+              <img src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&w=700&q=80" alt="Precision lawn mowing and sidewalk edging service">
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM7 7h10M7 12h10M7 17h10"/></svg>
+              </div>
+              <h3>Precision Lawn Mowing &amp; Edging</h3>
+              <p>Sharp-blade mulching cuts, string trimming around obstacles, razor-crisp perimeter edging, and thorough surface blowoff.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom cut height tailored to your grass type</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Driveway, patio, and curb debris clearance</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Nutrient-rich organic clippings dispersal</li>
+              </ul>
+              <div class="service-card-footer">
+                <a href="book-now.html">Book Service <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+                <span style="font-weight:700; color:var(--text-main);">From $45</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card interactive-card" data-reveal>
+            <div class="service-card-image">
+              <span class="service-badge">Custom Architecture</span>
+              <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=700&q=80" alt="Luxury outdoor bluestone patio hardscaping with natural stone steps, seating wall, and fire hearth" loading="lazy">
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M13 9l6 3v9"/></svg>
+              </div>
+              <h3>Landscape Design &amp; Hardscaping</h3>
+              <p>Turn wasted outdoor square footage into luxury entertainment spaces with natural flagstone patios, retaining walls, and fire pits.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 3D photorealistic architectural renderings</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Pavers, stone walkways, &amp; retaining walls</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Low-voltage ambient landscape illumination</li>
+              </ul>
+              <div class="service-card-footer">
+                <a href="book-now.html">Free Consultation <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+                <span style="font-weight:700; color:var(--text-main);">Custom Quote</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card interactive-card" data-reveal>
+            <div class="service-card-image">
+              <span class="service-badge">Water Conservation</span>
+              <img src="https://images.unsplash.com/photo-1780098847544-eb3867cc0e1c?auto=format&fit=crop&w=700&q=80" alt="Smart automated pop-up lawn sprinkler system watering lush green turf in warm sunlight" loading="lazy">
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <h3>Smart Irrigation &amp; Drainage </h3>
+              <p>Save up to 40% on municipal water bills with weather-sensing smart controllers, precision micro-drip lines, and French drains.</p>
+              <ul class="service-features-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Smart Wi-Fi weather-adjusting controllers</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Spring startup &amp; winter freeze blowouts</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Underground leak detection &amp; head repairs</li>
+              </ul>
+              <div class="service-card-footer">
+                <a href="book-now.html">Schedule Audit <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+                <span style="font-weight:700; color:var(--text-main);">From $89</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section-muted" aria-label="Recent Project Showcase">
+      <div class="container">
+        <div class="showcase-split-grid">
+
+          <div class="showcase-split-content" data-reveal="left">
+            <span class="eyebrow">Real Transformations</span>
+            <h2 class="heading">Featured Residential Landscape Makeovers</h2>
+            <p class="lead">
+              Take an architectural tour through our recent hardscape, sod, and garden living projects completed across the region.
+            </p>
+
+            <ul class="showcase-feature-list">
+              <li class="showcase-feature-item">
+                <div class="showcase-feature-icon">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="showcase-feature-text">
+                  <strong>Master Hardscape Architecture &amp; Patios</strong>
+                  <span>Hand-cut Pennsylvania flagstone paving, cantilevered cedar pergolas, and natural limestone retaining walls.</span>
+                </div>
+              </li>
+              <li class="showcase-feature-item">
+              </li>
+              <li class="showcase-feature-item">
+                <div class="showcase-feature-icon">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="showcase-feature-text">
+                  <strong>Smart Weather-Telemetry Irrigation</strong>
+                  <span>Wi-Fi smart satellite controllers that reduce water waste by up to 40% with automated rain delay shutoffs.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="showcase-actions">
+              <a href="book-now.html" class="btn btn-primary btn-sm">
+                <span>Request Custom Project Estimate</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="gallery.html" class="btn btn-secondary btn-sm">
+                <span>View Full Gallery</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="showcase-split-visual" data-reveal="right">
+            <div class="showcase-img-frame">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Completed residential landscape makeover featuring covered outdoor patio terrace, manicured green turf, and garden walkway" loading="lazy">
+              <div class="showcase-floating-badge">
+                <div class="showcase-badge-icon">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div>
+                  <div class="showcase-badge-title">250+ Makeovers</div>
+                  <div class="showcase-badge-sub">Award-Winning Residential Quality</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Eco-Smart Equipment & Sustainability">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="eyebrow">Eco-Smart Standards</span>
+          <h2>Quiet, Clean &amp; 100% Carbon-Conscious Equipment</h2>
+          <p class="lead">We believe exceptional landscaping shouldn't come at the cost of neighborhood peace or air quality. That is why we invest in commercial electric equipment.</p>
+        </div>
+
+        <div class="eco-showcase-stack">
+
+          <div class="eco-horizontal-card" data-reveal>
+            <div class="eco-card-media">
+              <span class="eco-card-badge">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <span>68 dB Whisper Quiet</span>
+              </span>
+              <img src="commercial-mowers-fleet.jpg" alt="Fleet of commercial precision mowers on manicured green lawn" loading="lazy">
+            </div>
+            <div class="eco-card-body">
+              <span class="eco-card-tag">
+                <svg class="icon" style="width:13px;height:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                All-Electric Commercial Fleet
+              </span>
+              <h3 class="eco-card-title">Whisper-Quiet Commercial Electric Mowers</h3>
+              <p class="eco-card-desc">
+                Operating at under 68 decibels, our electric commercial mowers allow you to sleep in or work from home undisturbed. Zero gasoline exhaust fumes drifting through open windows and neighborhood streets.
+              </p>
+              <div class="eco-card-pills">
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Zero Carbon Emissions
+                </span>
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  70% Noise Reduction
+                </span>
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Low-Vibration Cut
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-horizontal-card reverse" data-reveal>
+            <div class="eco-card-media">
+              <span class="eco-card-badge">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                <span>NOAA Satellite Synced</span>
+              </span>
+              <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=700&q=80" alt="Precision smart water management system and rain sensors" loading="lazy">
+            </div>
+            <div class="eco-card-body">
+              <span class="eco-card-tag">
+                <svg class="icon" style="width:13px;height:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Intelligent Water Conservation
+              </span>
+              <h3 class="eco-card-title">Weather-Predictive Irrigation Telemetry</h3>
+              <p class="eco-card-desc">
+                Smart controllers sync with NOAA weather satellites to suspend watering cycles before, during, and after rainstorms, eliminating municipal water waste. They automatically adjust irrigation schedules based on real-time weather conditions and rainfall forecasts.
+              </p>
+              <div class="eco-card-pills">
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Save Up to 40% Water
+                </span>
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Evapotranspiration Sensors
+                </span>
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Smart Wi-Fi Control
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="eco-horizontal-card" data-reveal>
+            <div class="eco-card-media">
+              <span class="eco-card-badge">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>100% Pet &amp; Child Safe</span>
+              </span>
+              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=700&q=80" alt="Pet and child playing safely on organic treated lawn" loading="lazy">
+            </div>
+            <div class="eco-card-body">
+              <span class="eco-card-tag">
+                <svg class="icon" style="width:13px;height:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Living Soil Microbiome
+              </span>
+              <h3 class="eco-card-title">100% Organic &amp; Pet-Safe Turf Nutrients</h3>
+              <p class="eco-card-desc">
+Cold-pressed ocean kelp, humic acid, and compost teas feed beneficial underground soil microbes. Children and pets can play safely immediately following treatment with zero chemical residues, while supporting stronger roots,and naturally greener lawns. </p>
+              <div class="eco-card-pills">
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Safe for Paws &amp; Pollinators
+                </span>
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Deep Root Multiplication
+                </span>
+                <span class="eco-pill">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Zero Synthetic Runoff
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" aria-label="Customer Reviews">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <span class="eyebrow">Happy Homeowners</span>
+          <h2>Loved by Neighbors Across the Community</h2>
+          <p class="lead">Read real experiences from homeowners who trusted VerdantCraft to revitalize their grounds.</p>
+        </div>
+
+        <div class="reviews-grid">
+
+          <div class="review-card" data-reveal>
+            <div class="star-rating">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"VerdantCraft completely revamped our backyard with a natural stone patio and lush new sod. Their crew showed up at 7:30 sharp every morning, kept the property clean, and finished ahead of schedule."</p>
+            <div class="review-author">
+              <img class="review-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Reynolds">
+              <div class="review-info">
+                <h4>Marcus Reynolds</h4>
+                <p>Highland Hills &bull; Full Landscape &amp; Patio</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" data-reveal>
+            <div class="star-rating">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"Our lawn was overtaken by crabgrass and dandelion. Within two cycles of their organic fertilization and aeration plan, it looks like a championship fairway. Highly recommended!"</p>
+            <div class="review-author">
+              <img class="review-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins-Lin">
+              <div class="review-info">
+                <h4>Sarah Jenkins-Lin</h4>
+                <p>Oakwood Estates &bull; Weekly Lawn Care</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" data-reveal>
+            <div class="star-rating">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"The online booking and cost estimator was so simple to use. No pushy salesmen, just honest transparent pricing relaxing space with exceptional and delivered outstanding results. Best service in town."</p>
+            <div class="review-author">
+              <img class="review-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="David Thompson">
+              <div class="review-info">
+                <h4>David Thompson</h4>
+                <p>Riverdale Valley &bull; Seasonal Maintenance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner-lush" style="background-image: url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=80');">
+      <div class="container text-center" data-reveal>
+        <span class="eyebrow" style="background: rgba(255,255,255,0.18); color: #86efac;">Ready for a greener yard?</span>
+        <h2 style="color:#ffffff; margin: 20px 0 16px;">Schedule Your Free Property Assessment Today</h2>
+        <p class="lead" style="color: #d1fae5; max-width:650px; margin: 0 auto 32px;">
+          Join hundreds of delighted homeowners enjoying lush, vibrant green yards without lifting a finger. Free quotes, zero hassle.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="book-now.html" class="btn btn-primary btn-lg">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Book Instant Estimate</span>
+          </a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Call +1 (800) 555-LAWN</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html" style="margin-bottom: 16px;" aria-label="VerdantCraft Home">
+            <div class="brand-logo-badge">
+              <img src="logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
+              <img src="logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
+            </div>
+            <div>
+              <span class="brand-name">Verdant<span>Craft</span></span>
+              <span class="brand-sub">LANDSCAPING &amp; LAWN CARE</span>
+            </div>
+          </a>
+          <p>Transforming outdoor spaces with artisan landscaping, precision lawn care, and sustainable architectural design excellence.</p>
+          <div style="margin: 16px 0;">
+
+          </div>
+          <div class="footer-social-links">
+            <a href="https://facebook.com" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://instagram.com" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://x.com" aria-label="X (Twitter)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+            <a href="https://linkedin.com" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://youtube.com" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Project Gallery</a></li>
+            <li><a href="pricing.html">Pricing &amp; Plans</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-detail.html?service=mowing">Precision Lawn Mowing</a></li>
+            <li><a href="service-detail.html?service=design">Landscape Architecture</a></li>
+            <li><a href="service-detail.html?service=hardscapes">Hardscapes &amp; Patios</a></li>
+            <li><a href="service-detail.html?service=aeration">Core Aeration &amp; Seeding</a></li>
+            <li><a href="service-detail.html?service=irrigation">Smart Irrigation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html#calculator">Instant Cost Calculator</a></li>
+            <li><a href="pricing.html#faq">Pricing &amp; Billing FAQ</a></li>
+            <li><a href="about.html#values">Satisfaction Guarantee</a></li>
+            <li><a href="about.html#accreditations">Licensing &amp; Insurance</a></li>
+            <li><a href="contact.html#emergency">24/7 Storm Response</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Details</h4>
+          <ul class="footer-links footer-contact-list">
+            <li style="display:flex; gap:8px; margin-bottom:12px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>742 Evergreen Terrace, Springfield, OR</span>
+            </li>
+            <li style="display:flex; gap:8px; margin-bottom:12px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+1 (800) 555-LAWN</span>
+            </li>
+            <li style="display:flex; gap:8px; margin-bottom:12px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>info@verdantcraftlandscaping.com</span>
+            </li>
+            <li style="display:flex; gap:8px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Mon-Sat: 7:00 AM - 6:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VerdantCraft Landscaping &amp; Lawn Care. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+>>>>>>> aab5d36bf9f4dda49b5e76039159195a1b7b8c27
