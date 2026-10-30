@@ -979,6 +979,10 @@ div.text-muted svg.text-primary {
   transition: all var(--transition-fast);
   align-items: center;
   justify-content: center;
+  touch-action: manipulation;
+}
+.menu-toggle svg {
+  pointer-events: none;
 }
 .menu-toggle svg line,
 .menu-toggle svg path {

@@ -18,10 +18,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerSvg = '<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     const closeSvg = '<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
 
-    menuBtn.addEventListener('click', () => {
-      const isOpen = siteNav.classList.toggle('is-open');
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
-      menuBtn.innerHTML = isOpen ? closeSvg : hamburgerSvg;
+    let backdrop = document.querySelector('.nav-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'nav-backdrop';
+      document.body.appendChild(backdrop);
+    }
+
+    const closeNav = () => {
+      siteNav.classList.remove('is-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.innerHTML = hamburgerSvg;
+      document.body.classList.remove('menu-open');
+      backdrop.classList.remove('is-active');
+    };
+
+    const openNav = () => {
+      siteNav.classList.add('is-open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      menuBtn.innerHTML = closeSvg;
+      document.body.classList.add('menu-open');
+      backdrop.classList.add('is-active');
+    };
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = siteNav.classList.contains('is-open');
+      if (isOpen) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    });
+
+    backdrop.addEventListener('click', closeNav);
+
+    siteNav.querySelectorAll('.nav-link:not(.nav-dropdown-toggle), .dropdown-item-custom').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+        closeNav();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992 && siteNav.classList.contains('is-open')) {
+        closeNav();
+      }
     });
   }
 
