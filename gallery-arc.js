@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   function initFanDeck() {
     const stage = document.getElementById('arc-fandeck-stage');
     if (!stage) return;
@@ -11,8 +11,10 @@
 
     function getResponsiveParams() {
       const w = window.innerWidth;
-      if (w < 600) {
-        return { spreadX: 42, rotStep: 6.5, arcY: 10, scaleStep: 0.08, zStep: 28 };
+      if (w < 400) {
+        return { spreadX: 24, rotStep: 3.5, arcY: 4, scaleStep: 0.09, zStep: 16 };
+      } else if (w < 600) {
+        return { spreadX: 34, rotStep: 5, arcY: 7, scaleStep: 0.08, zStep: 24 };
       } else if (w < 992) {
         return { spreadX: 72, rotStep: 7.5, arcY: 14, scaleStep: 0.07, zStep: 35 };
       } else if (w < 1200) {

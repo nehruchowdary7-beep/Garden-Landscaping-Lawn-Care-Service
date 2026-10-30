@@ -1,18 +1,258 @@
-﻿@media (max-width: 992px) {
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+main, section, .container {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.services-grid,
+.monolith-gallery-deck,
+.estate-showcase-grid,
+.sd-scope-grid,
+.sd-process-grid,
+.sd-pricing-grid,
+.pricing-cards-grid,
+.alacarte-specimen-grid,
+.team-grid-modern,
+.studios-grid,
+.consult-steps-grid,
+.coverage-zones-grid,
+.service-steps-grid,
+.process-grid,
+.reviews-grid,
+.gallery-grid,
+.gallery-section5-row,
+.botanical-bento-grid,
+.concierge-grid {
+  display: grid;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.service-card,
+.sd-scope-card,
+.sd-process-card,
+.sd-pricing-card,
+.pricing-card,
+.monolith-card,
+.estate-portfolio-card,
+.team-card-modern,
+.studio-card,
+.consult-step-card,
+.coverage-zone-card,
+.service-step-card,
+.process-card,
+.review-card,
+.gallery-item-card,
+.project-showcase-card,
+.botanical-card,
+.concierge-card,
+.contact-info-card,
+.form-card {
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+}
+
+.service-card-body,
+.sd-scope-content,
+.sd-process-body,
+.studio-card-body,
+.team-card-body,
+.service-step-body,
+.process-card-body,
+.gallery-item-body,
+.project-body,
+.eco-card-body,
+.consult-step-card .step-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.service-card-body p,
+.sd-scope-card p,
+.sd-process-card p,
+.sd-pricing-desc,
+.pricing-card p,
+.review-text,
+.process-card-body p,
+.service-step-body p,
+.studio-card-body p,
+.gallery-item-body p,
+.project-body p,
+.estate-card-desc,
+.monolith-desc {
+  flex-grow: 1;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.service-card-footer,
+.sd-pricing-card .btn,
+.pricing-card .btn,
+.review-author,
+.team-social-bar,
+.studio-card-footer,
+.monolith-action-btn,
+.arc-card-btn {
+  margin-top: auto !important;
+}
+
+.service-card-image img,
+.sd-scope-img-wrap img,
+.sd-process-card img,
+.studio-card-img-wrap img,
+.team-portrait-img,
+.service-step-img-wrap img,
+.process-img-wrap img,
+.gallery-img-wrap img,
+.project-showcase-img img,
+.botanical-card-media img,
+.monolith-card-img,
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .sd-scope-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .sd-process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .sd-pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .pricing-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .team-grid-modern {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .studios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .monolith-gallery-deck {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .gallery-section5-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (min-width: 769px) {
+  .service-card,
+  .sd-scope-card,
+  .sd-process-card,
+  .sd-pricing-card,
+  .pricing-card,
+  .monolith-card,
+  .estate-portfolio-card,
+  .team-card-modern,
+  .studio-card,
+  .consult-step-card,
+  .coverage-zone-card,
+  .service-step-card,
+  .process-card,
+  .review-card,
+  .gallery-item-card,
+  .project-showcase-card,
+  .botanical-card,
+  .concierge-card {
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .sd-scope-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .sd-process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .sd-pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .pricing-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .monolith-gallery-deck {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .team-grid-modern {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .studios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .gallery-section5-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 992px) {
   .hero-section {
     min-height: auto;
-    padding: 48px 0 40px;
+    padding: 44px 0 36px;
   }
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
   .hero-image-wrap img {
-    height: 380px;
+    height: 340px;
   }
   .hero-visual {
     max-width: 600px;
     margin: 0 auto;
+    width: 100%;
   }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -25,13 +265,11 @@
   .footer-about {
     grid-column: span 2;
   }
-
   .menu-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .site-nav {
     position: fixed;
     top: 75px;
@@ -44,39 +282,336 @@
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-lg);
     display: none;
+    z-index: 1000;
   }
-
   .site-nav.is-open {
     display: flex;
     animation: fadeIn 0.3s ease;
   }
-
   .site-nav .nav-link {
     width: 100%;
     padding: 12px 16px;
     border-radius: var(--radius-sm);
   }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px;
+  }
+  .sd-scope-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+  }
+  .sd-process-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+  }
+  .sd-pricing-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+  }
+  .pricing-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .monolith-gallery-deck {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px;
+    max-width: 780px;
+    margin: 36px auto 0;
+  }
+  .estate-showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px;
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+  }
+  .team-grid-modern {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+  }
+  .studios-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+  }
+  .service-steps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+  }
+  .consult-steps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+  }
+  .coverage-zones-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px;
+  }
+  .gallery-section5-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px;
+  }
+  .botanical-bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  .botanical-card-wide,
+  .botanical-card-compact {
+    grid-column: span 1 !important;
+  }
+  .eco-horizontal-card,
+  .eco-horizontal-card.reverse {
+    grid-template-columns: 1fr;
+    height: auto !important;
+  }
+  .eco-horizontal-card.reverse .eco-card-media {
+    order: 0;
+  }
+  .eco-horizontal-card.reverse .eco-card-body {
+    order: 1;
+  }
+  .eco-card-media {
+    height: 240px;
+  }
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip;
+  }
+  .site-header .container,
+  .site-footer .container,
+  .site-header .header-row {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+  .brand {
+    gap: 8px !important;
+    max-width: calc(100% - 130px) !important;
+    flex-shrink: 1 !important;
+  }
+  .brand-logo-badge {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+  .brand-name {
+    font-size: 1.15rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  .brand-sub {
+    display: none !important;
+  }
+  .header-actions {
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+  .header-actions .btn {
+    display: none !important;
+  }
+  .dir-btn {
+    min-width: 38px !important;
+    height: 36px !important;
+    padding: 0 8px !important;
+    font-size: 0.76rem !important;
+  }
+  .icon-btn,
+  .theme-control {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+  .menu-toggle {
+    width: 38px !important;
+    height: 36px !important;
+    min-width: 38px !important;
+  }
+
+  .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .row > * {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    max-width: 100% !important;
+  }
+  .g-5, .gx-5, .g-4, .gx-4 {
+    --bs-gutter-x: 0 !important;
+  }
+
+  .comparison-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+  }
+  .comparison-table {
+    min-width: 580px !important;
+  }
+
+  .sd-book-card .d-flex.gap-2,
+  .form-card .d-flex.gap-2,
+  form .d-flex.gap-2 {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .sd-book-card .d-flex.gap-2 .btn,
+  .form-card .d-flex.gap-2 .btn,
+  form .d-flex.gap-2 .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
   .top-bar {
     display: none;
   }
   .stats-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero-section {
+    padding: 32px 0 28px !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .hero-content {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .hero-content .eyebrow {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 0.74rem !important;
+    letter-spacing: 0.08em !important;
+    max-width: 100% !important;
+    padding: 6px 14px !important;
+    white-space: normal !important;
+  }
+  .hero-content h1 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    font-size: clamp(1.85rem, 6.2vw, 2.35rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+  }
+  .hero-content p.lead {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+    font-size: 0.96rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 22px !important;
+  }
   .hero-cta-group {
-    flex-direction: column;
-    align-items: stretch;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 24px !important;
   }
   .hero-cta-group .btn {
-    width: 100%;
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 12px 18px !important;
+    font-size: 0.95rem !important;
   }
   .trust-badges {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 24px !important;
   }
+  .trust-badge-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 290px !important;
+    justify-content: flex-start !important;
+  }
+  .hero-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .hero-image-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-lg) !important;
+    margin: 0 auto !important;
+    border: 3px solid var(--bg-surface) !important;
+  }
+  .hero-image-wrap img {
+    width: 100% !important;
+    height: 250px !important;
+    aspect-ratio: 16/10 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -99,6 +634,441 @@
     margin: 30px auto 50px;
     padding: 48px 20px;
     border-radius: var(--radius-lg, 16px);
+  }
+
+  .section-header {
+    text-align: center !important;
+    max-width: 540px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 28px !important;
+  }
+  .section-header .eyebrow,
+  .section-header .luxury-eyebrow {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: table !important;
+  }
+  .section-header h2,
+  .section-header h1,
+  .section-header p {
+    text-align: center !important;
+  }
+
+  .services-grid,
+  .sd-scope-grid,
+  .sd-process-grid,
+  .process-grid,
+  .sd-pricing-grid,
+  .pricing-cards-grid,
+  .monolith-gallery-deck,
+  .reviews-grid,
+  .team-grid-modern,
+  .studios-grid,
+  .service-steps-grid,
+  .consult-steps-grid,
+  .coverage-zones-grid,
+  .gallery-grid,
+  .gallery-section5-row,
+  .alacarte-specimen-grid,
+  .botanical-bento-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: 20px !important;
+  }
+
+  .service-card,
+  .sd-scope-card,
+  .sd-process-card,
+  .process-card,
+  .sd-pricing-card,
+  .pricing-card,
+  .review-card,
+  .team-card-modern,
+  .studio-card,
+  .service-step-card,
+  .consult-step-card,
+  .coverage-zone-card,
+  .gallery-item-card,
+  .project-showcase-card,
+  .botanical-card,
+  .specimen-tile {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .monolith-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 480px !important;
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+  }
+  .monolith-title {
+    font-size: 1.25rem !important;
+  }
+  .monolith-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+  }
+  .monolith-index-watermark {
+    font-size: 2.2rem !important;
+  }
+  .monolith-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .contact-info-card,
+  .form-card {
+    width: 100% !important;
+    max-width: 520px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: auto !important;
+    padding: 26px 20px !important;
+  }
+  .contact-info-card a[href^="mailto:"] {
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+  .contact-map-card {
+    width: 100% !important;
+    height: 230px !important;
+    min-height: 230px !important;
+    max-height: 230px !important;
+    flex: none !important;
+    margin-top: 22px !important;
+  }
+  .contact-map-card iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 230px !important;
+    border: 0;
+  }
+  .contact-map-badge {
+    padding: 8px 12px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-services-arc {
+    overflow: hidden !important;
+    padding: 48px 0 56px !important;
+  }
+  .arc-fandeck-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 26px auto 0 !important;
+    overflow: hidden !important;
+  }
+  .arc-fandeck-stage {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 380px !important;
+    margin: 0 auto !important;
+  }
+  .arc-card {
+    left: 50% !important;
+    width: 180px !important;
+    height: 320px !important;
+    margin-top: -160px !important;
+    margin-left: -90px !important;
+    border-radius: 20px !important;
+  }
+  .arc-card-inner {
+    padding: 14px 14px !important;
+    border-radius: 20px !important;
+  }
+  .arc-card-title {
+    font-size: 0.96rem !important;
+    margin-bottom: 4px !important;
+  }
+  .arc-card-desc {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+  }
+  .arc-card-num {
+    font-size: 1.9rem !important;
+  }
+  .arc-nav-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .services-grid,
+  .sd-scope-grid,
+  .sd-process-grid,
+  .process-grid,
+  .sd-pricing-grid,
+  .pricing-cards-grid,
+  .monolith-gallery-deck,
+  .reviews-grid,
+  .team-grid-modern,
+  .studios-grid,
+  .service-steps-grid,
+  .consult-steps-grid,
+  .coverage-zones-grid,
+  .gallery-grid,
+  .gallery-section5-row,
+  .alacarte-specimen-grid,
+  .contact-info-card,
+  .form-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    gap: 18px !important;
+  }
+
+  .service-card-body,
+  .sd-scope-content,
+  .sd-process-body,
+  .studio-card-body,
+  .team-card-body,
+  .service-step-body,
+  .process-card-body,
+  .gallery-item-body,
+  .project-body,
+  .review-card,
+  .pricing-card,
+  .contact-info-card,
+  .form-card {
+    padding: 20px 16px !important;
+  }
+
+  .service-card-image {
+    height: 195px !important;
+  }
+  .sd-scope-img-wrap {
+    height: 180px !important;
+  }
+  .studio-card-img-wrap {
+    height: 190px !important;
+  }
+  .gallery-img-wrap {
+    height: 220px !important;
+  }
+  .process-img-wrap {
+    height: 175px !important;
+  }
+  .service-step-img-wrap {
+    height: 180px !important;
+  }
+  .team-portrait-frame {
+    height: 260px !important;
+  }
+  .project-showcase-img {
+    height: 200px !important;
+  }
+
+  .pricing-amount,
+  .pricing-price-display {
+    font-size: 2.1rem !important;
+  }
+  .pricing-card .btn,
+  .sd-pricing-card .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .estate-portfolio-card,
+  .estate-portfolio-card.card-full {
+    min-height: 280px !important;
+    padding: 22px 18px !important;
+  }
+
+  .sd-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .sd-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .sd-estimate-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-header .container,
+  .site-footer .container,
+  .site-header .header-row {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .brand {
+    gap: 6px !important;
+    max-width: calc(100% - 118px) !important;
+  }
+  .brand-logo-badge {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+  }
+  .brand-name {
+    font-size: 1.05rem !important;
+  }
+  .header-actions {
+    gap: 6px !important;
+  }
+  .dir-btn {
+    min-width: 34px !important;
+    height: 34px !important;
+    padding: 0 6px !important;
+    font-size: 0.72rem !important;
+  }
+  .icon-btn,
+  .theme-control {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+  }
+  .menu-toggle {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+  }
+
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .hero-content h1 {
+    font-size: 1.68rem !important;
+  }
+  .hero-content p.lead {
+    font-size: 0.9rem !important;
+  }
+  .hero-image-wrap img {
+    height: 210px !important;
+  }
+  .trust-badge-item {
+    font-size: 0.85rem !important;
+    max-width: 260px !important;
+  }
+
+  .service-card-body,
+  .sd-scope-content,
+  .studio-card-body,
+  .team-card-body,
+  .service-step-body,
+  .process-card-body,
+  .gallery-item-body,
+  .review-card,
+  .pricing-card,
+  .contact-info-card,
+  .form-card {
+    padding: 16px 12px !important;
+  }
+  .service-card-body h3,
+  .sd-scope-card h3,
+  .gallery-item-body h3,
+  .studio-card-body h3,
+  .pricing-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .monolith-card {
+    min-height: 440px !important;
+    padding: 16px 14px !important;
+  }
+  .monolith-title {
+    font-size: 1.12rem !important;
+  }
+  .monolith-feature-pill {
+    font-size: 0.74rem !important;
+    padding: 4px 8px !important;
+  }
+
+  .arc-fandeck-stage {
+    height: 340px !important;
+  }
+  .arc-card {
+    width: 160px !important;
+    height: 285px !important;
+    margin-top: -142px !important;
+    margin-left: -80px !important;
+    border-radius: 16px !important;
+  }
+  .arc-card-inner {
+    padding: 12px 10px !important;
+    border-radius: 16px !important;
+  }
+  .arc-card-num {
+    font-size: 1.6rem !important;
+  }
+  .arc-card-title {
+    font-size: 0.88rem !important;
+  }
+  .arc-card-desc {
+    font-size: 0.75rem !important;
+    line-height: 1.35 !important;
+    -webkit-line-clamp: 2 !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  .arc-card-btn {
+    font-size: 0.78rem !important;
+    padding: 6px 10px !important;
+  }
+
+  .specimen-tile {
+    padding: 16px 12px !important;
+  }
+}
+
+@media (hover: none) {
+  .service-card:hover,
+  .sd-scope-card:hover,
+  .sd-process-card:hover,
+  .sd-pricing-card:hover,
+  .pricing-card:hover,
+  .monolith-card:hover,
+  .estate-portfolio-card:hover,
+  .team-card-modern:hover,
+  .studio-card:hover,
+  .process-card:hover,
+  .gallery-item-card:hover,
+  .project-showcase-card:hover,
+  .botanical-card:hover {
+    transform: none !important;
+  }
+  .botanical-card-drawer {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .botanical-card-action {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

@@ -1,4 +1,4 @@
-﻿@keyframes fadeIn {
+@keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -302,5 +302,22 @@ body.is-preloading {
   }
   .page-preloader.is-finished {
     display: none !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  [data-reveal="left"],
+  [data-reveal="right"] {
+    transform: translateY(20px);
+  }
+  [data-reveal="left"].is-revealed,
+  [data-reveal="right"].is-revealed {
+    transform: translateY(0);
+  }
+  .hero-opening-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

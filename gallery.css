@@ -1,4 +1,4 @@
-﻿.gallery-filter-bar {
+.gallery-filter-bar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1054,8 +1054,6 @@
   justify-content: space-between;
   padding: 18px 18px;
   isolation: isolate;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
