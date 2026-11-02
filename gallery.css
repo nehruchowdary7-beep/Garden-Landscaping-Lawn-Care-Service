@@ -1176,6 +1176,7 @@
   line-height: 1.28;
   font-family: var(--font-heading);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  padding-bottom: 50px;
 }
 
 .arc-card-desc {
