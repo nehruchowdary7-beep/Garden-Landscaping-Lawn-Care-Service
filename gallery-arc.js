@@ -212,7 +212,7 @@
           ease: "elastic.out(1,.75)",
           overwrite: "auto"
         });
-        gsap.set(el, { zIndex: base.zIndex });
+        gsap.set(el, { zIndex: slot === hoveredSlot ? 40 : base.zIndex });
       });
     }
 
@@ -235,6 +235,8 @@
         const slot = visibleMap.get(cardIdx);
         if (slot !== undefined && activeSlot !== slot) {
           activeSlot = slot;
+          cardElements.forEach(c => c.classList.remove('is-hovered'));
+          card.classList.add('is-hovered');
           updateHoverLayout(slot);
         }
       });
@@ -245,6 +247,7 @@
       if (leaveTimer) clearTimeout(leaveTimer);
       leaveTimer = setTimeout(() => {
         activeSlot = null;
+        cardElements.forEach(c => c.classList.remove('is-hovered'));
         updateHoverLayout(null);
       }, 50);
     });
