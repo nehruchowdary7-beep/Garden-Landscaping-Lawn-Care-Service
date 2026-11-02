@@ -1,96 +1,296 @@
-
 (function () {
+  const MAX_VISIBLE = 7;
+  const HALF = 3;
+
+  const FAN_POSITIONS = [
+    { rot: -21, scale: 0.7756, x: -30, y: 7.3, zIndex: 1 },
+    { rot: -14, scale: 0.8498, x: -22, y: 4.0, zIndex: 2 },
+    { rot: -7,  scale: 0.9346, x: -11, y: 1.3, zIndex: 3 },
+    { rot: 0,   scale: 1.0,    x: 0,   y: 0.0, zIndex: 10 },
+    { rot: 7,   scale: 0.9346, x: 11,  y: 1.3, zIndex: 3 },
+    { rot: 14,  scale: 0.8498, x: 22,  y: 4.0, zIndex: 2 },
+    { rot: 21,  scale: 0.7756, x: 30,  y: 7.3, zIndex: 1 }
+  ];
+
+  function getResponsiveMultiplier(width) {
+    if (width < 480) return 0.28;
+    if (width < 640) return 0.38;
+    if (width < 768) return 0.5;
+    if (width < 1024) return 0.75;
+    return 1.0;
+  }
+
+  function getHeightMultiplier(width) {
+    let idealPx;
+    if (width < 480) idealPx = 22 * 16;
+    else if (width < 640) idealPx = 26 * 16;
+    else if (width < 768) idealPx = 28 * 16;
+    else if (width < 1024) idealPx = 34 * 16;
+    else idealPx = 38 * 16;
+
+    const available = window.innerHeight * 0.7;
+    if (available >= idealPx) return 1;
+    return Math.max(0.65, available / idealPx);
+  }
+
+  function getSlotConfig(totalCards, slot) {
+    if (totalCards >= MAX_VISIBLE) return FAN_POSITIONS[slot];
+    const center = totalCards >> 1;
+    const distance = totalCards > 1 ? (slot - center) / center : 0;
+    const absDistance = Math.abs(distance);
+    return {
+      rot: distance * 21,
+      scale: 1.0 - 0.2244 * absDistance * absDistance,
+      x: distance * 30,
+      y: absDistance * absDistance * 7.3,
+      zIndex: 10 - Math.abs(slot - center)
+    };
+  }
+
   function initFanDeck() {
     const stage = document.getElementById('arc-fandeck-stage');
     if (!stage) return;
 
-    const cards = Array.from(stage.querySelectorAll('.arc-card'));
-    const total = cards.length;
-    if (total === 0) return;
+    const cardElements = Array.from(stage.querySelectorAll('.arc-card'));
+    const totalCards = cardElements.length;
+    if (!totalCards) return;
 
-    let activeIndex = 3;
+    const needsPagination = totalCards >= 3;
+    let centerIndex = HALF;
+    let isAnimating = false;
+    let hasEntered = false;
+    let direction = null;
+    let prevVisible = new Set();
+    let activeSlot = null;
+    let leaveTimer = null;
 
-    function getResponsiveParams() {
-      const w = window.innerWidth;
-      if (w < 400) {
-        return { spreadX: 24, rotStep: 3.5, arcY: 4, scaleStep: 0.09, zStep: 16 };
-      } else if (w < 640) {
-        return { spreadX: 34, rotStep: 5, arcY: 7, scaleStep: 0.08, zStep: 24 };
-      } else if (w <= 1024) {
-        return { spreadX: 72, rotStep: 7.5, arcY: 14, scaleStep: 0.07, zStep: 35 };
-      } else if (w <= 1280) {
-        return { spreadX: 96, rotStep: 8, arcY: 18, scaleStep: 0.06, zStep: 45 };
-      } else {
-        return { spreadX: 115, rotStep: 8.5, arcY: 20, scaleStep: 0.05, zStep: 55 };
+    function getVisibleMap(center) {
+      const map = new Map();
+      for (let slot = 0; slot < MAX_VISIBLE; slot++) {
+        map.set(((center + slot - HALF) % totalCards + totalCards) % totalCards, slot);
+      }
+      return map;
+    }
+
+    function renderDeck() {
+      const visibleMap = getVisibleMap(centerIndex);
+      const isFirstMount = !hasEntered;
+      const multiplier = getResponsiveMultiplier(window.innerWidth);
+      const hMult = getHeightMultiplier(window.innerWidth);
+      const slotCount = MAX_VISIBLE;
+      const config = (slot) => getSlotConfig(slotCount, slot);
+
+      if (isFirstMount) isAnimating = true;
+
+      let completedCount = 0;
+      const visibleCount = visibleMap.size;
+      const onCardDone = () => {
+        completedCount++;
+        if (completedCount >= visibleCount) {
+          isAnimating = false;
+          if (isFirstMount) hasEntered = true;
+        }
       };
-      }
+
+      cardElements.forEach((card, cardIndex) => {
+        const slot = visibleMap.get(cardIndex);
+        const wasVisible = prevVisible.has(cardIndex);
+
+        if (slot !== undefined) {
+          const cfg = config(slot);
+          const target = {
+            x: `${cfg.x * multiplier}rem`,
+            y: `${cfg.y * hMult}rem`,
+            rotation: cfg.rot,
+            scale: cfg.scale,
+            opacity: 1,
+            zIndex: cfg.zIndex
+          };
+
+          if (slot === HALF) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+
+          if (typeof gsap !== 'undefined') {
+            if (isFirstMount) {
+              gsap.set(card, { x: 0, y: `${12 * hMult}rem`, rotation: 0, scale: 0.5, opacity: 0 });
+              gsap.to(card, { ...target, duration: 1.2, ease: "elastic.out(1.05,.78)", delay: 0.2 + slot * 0.06, onComplete: onCardDone });
+            } else if (!wasVisible) {
+              const enterX = direction === 'right' ? 40 : -40;
+              gsap.set(card, { x: `${enterX}rem`, y: `${cfg.y * hMult}rem`, rotation: direction === 'right' ? 30 : -30, scale: 0.5, opacity: 0 });
+              gsap.to(card, { ...target, duration: 0.6, ease: "power2.out", onComplete: onCardDone });
+            } else {
+              gsap.to(card, { ...target, duration: 0.5, ease: "power2.out", onComplete: onCardDone });
+            }
+          } else {
+            card.style.transform = `translate3d(${cfg.x * multiplier}rem, ${cfg.y * hMult}rem, 0) rotate(${cfg.rot}deg) scale(${cfg.scale})`;
+            card.style.opacity = '1';
+            card.style.zIndex = cfg.zIndex;
+            onCardDone();
+          }
+        } else if (wasVisible) {
+          card.classList.remove('active');
+          if (typeof gsap !== 'undefined') {
+            const exitX = direction === 'right' ? -40 : 40;
+            gsap.to(card, { x: `${exitX}rem`, opacity: 0, scale: 0.5, rotation: direction === 'right' ? -30 : 30, duration: 0.4, ease: "power2.in", zIndex: 0 });
+          } else {
+            card.style.opacity = '0';
+            card.style.zIndex = '0';
+          }
+        } else if (isFirstMount) {
+          if (typeof gsap !== 'undefined') {
+            gsap.set(card, { opacity: 0, scale: 0.3, x: 0, y: 0, zIndex: 0 });
+          } else {
+            card.style.opacity = '0';
+          }
+        }
+      });
+
+      prevVisible = new Set(visibleMap.keys());
     }
 
-    function updateDeck(centerIdx) {
-      activeIndex = Math.max(0, Math.min(total - 1, centerIdx));
-      const p = getResponsiveParams();
+    function updateHoverLayout(hoveredSlot) {
+      if (typeof gsap === 'undefined') return;
 
-      cards.forEach((card, i) => {
-        const offset = i - activeIndex;
-        const absOffset = Math.abs(offset);
+      const visibleMap = getVisibleMap(centerIndex);
+      const visibleEntries = [];
+      cardElements.forEach((el, i) => {
+        const slot = visibleMap.get(i);
+        if (slot !== undefined) visibleEntries.push({ el, slot });
+      });
+      visibleEntries.sort((a, b) => a.slot - b.slot);
 
-        const translateX = offset * p.spreadX;
-        const translateY = Math.pow(offset, 2) * p.arcY;
-        const rotateZ = offset * p.rotStep;
-        const rotateY = -offset * 3.5;
-        const scale = Math.max(0.72, 1 - absOffset * p.scaleStep);
-        const translateZ = -absOffset * p.zStep;
+      const centerSlot = HALF;
+      const mult = getResponsiveMultiplier(window.innerWidth);
+      const hM = getHeightMultiplier(window.innerWidth);
+      const slotCount = MAX_VISIBLE;
+      const config = (slot) => getSlotConfig(slotCount, slot);
 
-        const zIndex = 40 - absOffset;
-        card.style.zIndex = zIndex;
+      visibleEntries.forEach(({ el, slot }) => {
+        const base = config(slot);
+        let targetX = base.x * mult;
+        let targetY = base.y * hM;
+        let targetRot = base.rot;
+        let targetScale = base.scale;
+        let delay = 0;
 
-        if (i === activeIndex) {
-          card.classList.add('active');
+        if (hoveredSlot !== null) {
+          const distance = Math.abs(slot - hoveredSlot);
+          delay = distance * 0.02;
 
-          card.style.transform = `translate3d(0px, -18px, 60px) rotateZ(0deg) rotateY(0deg) scale(1.08)`;
-          card.style.opacity = '1';
-          card.style.filter = 'none';
+          if (slot === hoveredSlot) {
+            targetY -= 2.5 * hM;
+            targetScale *= 1.08;
+          } else {
+            const normalized = centerSlot > 0 ? (slot - centerSlot) / centerSlot : 0;
+            const pushStrength = 8 * (1 - Math.abs(normalized)) * (1 + 0.2 * Math.max(0, 3 - distance));
+
+            if (slot < hoveredSlot) {
+              targetX -= pushStrength * mult;
+              targetRot -= 3 / (distance + 1);
+            } else {
+              targetX += pushStrength * mult;
+              targetRot += 3 / (distance + 1);
+            }
+
+            if (slot === visibleEntries.length - 1 && hoveredSlot < centerSlot) targetY -= 1 * hM;
+            if (slot === 0 && hoveredSlot > centerSlot) targetY -= 1 * hM;
+          }
         } else {
-          card.classList.remove('active');
-          card.style.transform = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px) rotateZ(${rotateZ}deg) rotateY(${rotateY}deg) scale(${scale})`;
-          card.style.opacity = Math.max(0.48, 1 - absOffset * 0.16).toString();
-          card.style.filter = absOffset > 1 ? `brightness(${Math.max(0.72, 1 - absOffset * 0.07)})` : 'none';
+          delay = Math.abs(slot - centerSlot) * 0.02;
         }
+
+        gsap.to(el, {
+          x: `${targetX}rem`,
+          y: `${targetY}rem`,
+          rotation: targetRot,
+          scale: targetScale,
+          duration: 0.5,
+          delay: delay,
+          ease: "elastic.out(1,.75)",
+          overwrite: "auto"
+        });
+        gsap.set(el, { zIndex: base.zIndex });
       });
     }
 
+    function cycle(dir) {
+      if (isAnimating) return;
+      isAnimating = true;
+      direction = dir;
+      centerIndex = dir === 'right'
+        ? (centerIndex + 1) % totalCards
+        : (centerIndex - 1 + totalCards) % totalCards;
+      renderDeck();
+    }
+
+    cardElements.forEach((card) => {
+      card.addEventListener('mouseenter', function () {
+        if (isAnimating) return;
+        if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
+        const visibleMap = getVisibleMap(centerIndex);
+        const cardIdx = cardElements.indexOf(card);
+        const slot = visibleMap.get(cardIdx);
+        if (slot !== undefined && activeSlot !== slot) {
+          activeSlot = slot;
+          updateHoverLayout(slot);
+        }
+      });
+    });
+
+    stage.addEventListener('mouseleave', function () {
+      if (isAnimating) return;
+      if (leaveTimer) clearTimeout(leaveTimer);
+      leaveTimer = setTimeout(() => {
+        activeSlot = null;
+        updateHoverLayout(null);
+      }, 50);
+    });
+
     stage.addEventListener('click', function (e) {
-
       if (e.target.closest('.arc-card-btn')) return;
-
       const card = e.target.closest('.arc-card');
       if (!card) return;
-
-      const idx = cards.indexOf(card);
-      if (idx !== -1) {
-        updateDeck(idx);
+      const idx = cardElements.indexOf(card);
+      if (idx !== -1 && idx !== centerIndex) {
+        direction = idx > centerIndex ? 'right' : 'left';
+        centerIndex = idx;
+        renderDeck();
       }
     });
 
+    let touchStartX = 0;
     let touchMoved = false;
-    stage.addEventListener('touchstart', function () {
+    stage.addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
       touchMoved = false;
     }, { passive: true });
 
-    stage.addEventListener('touchmove', function () {
-      touchMoved = true;
+    stage.addEventListener('touchmove', function (e) {
+      const diffX = Math.abs(e.touches[0].clientX - touchStartX);
+      if (diffX > 10) touchMoved = true;
     }, { passive: true });
 
     stage.addEventListener('touchend', function (e) {
-      if (touchMoved) return;
-      if (e.target.closest('.arc-card-btn')) return;
-
-      const card = e.target.closest('.arc-card');
-      if (!card) return;
-
-      const idx = cards.indexOf(card);
-      if (idx !== -1) {
-        updateDeck(idx);
+      if (!touchMoved) {
+        if (e.target.closest('.arc-card-btn')) return;
+        const card = e.target.closest('.arc-card');
+        if (card) {
+          const idx = cardElements.indexOf(card);
+          if (idx !== -1 && idx !== centerIndex) {
+            direction = idx > centerIndex ? 'right' : 'left';
+            centerIndex = idx;
+            renderDeck();
+          }
+        }
+        return;
+      }
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaX = touchEndX - touchStartX;
+      if (Math.abs(deltaX) > 40) {
+        cycle(deltaX < 0 ? 'right' : 'left');
       }
     });
 
@@ -98,26 +298,26 @@
     const nextBtn = document.getElementById('arc-next-btn');
 
     if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        const targetIdx = (activeIndex - 1 + total) % total;
-        updateDeck(targetIdx);
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        cycle('left');
       });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        const targetIdx = (activeIndex + 1) % total;
-        updateDeck(targetIdx);
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        cycle('right');
       });
     }
 
     stage.setAttribute('tabindex', '0');
     stage.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft' && activeIndex > 0) {
-        updateDeck(activeIndex - 1);
+      if (e.key === 'ArrowLeft') {
+        cycle('left');
         e.preventDefault();
-      } else if (e.key === 'ArrowRight' && activeIndex < total - 1) {
-        updateDeck(activeIndex + 1);
+      } else if (e.key === 'ArrowRight') {
+        cycle('right');
         e.preventDefault();
       }
     });
@@ -126,149 +326,14 @@
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        updateDeck(activeIndex);
-      }, 100);
-    });
-
-    updateDeck(activeIndex);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFanDeck);
-  } else {
-    initFanDeck();
-  }
-})();
-
-﻿(function () {
-  function initFanDeck() {
-    const stage = document.getElementById('arc-fandeck-stage');
-    if (!stage) return;
-
-    const cards = Array.from(stage.querySelectorAll('.arc-card'));
-    const total = cards.length;
-    if (total === 0) return;
-
-    let activeIndex = 3;
-
-    function getResponsiveParams() {
-      const w = window.innerWidth;
-      if (w < 600) {
-        return { spreadX: 42, rotStep: 6.5, arcY: 10, scaleStep: 0.08, zStep: 28 };
-      } else if (w < 992) {
-        return { spreadX: 72, rotStep: 7.5, arcY: 14, scaleStep: 0.07, zStep: 35 };
-      } else if (w < 1200) {
-        return { spreadX: 96, rotStep: 8, arcY: 18, scaleStep: 0.06, zStep: 45 };
-      } else {
-        return { spreadX: 115, rotStep: 8.5, arcY: 20, scaleStep: 0.05, zStep: 55 };
-      }
-    }
-
-    function updateDeck(centerIdx) {
-      activeIndex = Math.max(0, Math.min(total - 1, centerIdx));
-      const p = getResponsiveParams();
-
-      cards.forEach((card, i) => {
-        const offset = i - activeIndex;
-        const absOffset = Math.abs(offset);
-
-        const translateX = offset * p.spreadX;
-        const translateY = Math.pow(offset, 2) * p.arcY;
-        const rotateZ = offset * p.rotStep;
-        const rotateY = -offset * 3.5;
-        const scale = Math.max(0.72, 1 - absOffset * p.scaleStep);
-        const translateZ = -absOffset * p.zStep;
-
-        const zIndex = 40 - absOffset;
-        card.style.zIndex = zIndex;
-
-        if (i === activeIndex) {
-          card.classList.add('active');
-
-          card.style.transform = `translate3d(0px, -18px, 60px) rotateZ(0deg) rotateY(0deg) scale(1.08)`;
-          card.style.opacity = '1';
-          card.style.filter = 'none';
-        } else {
-          card.classList.remove('active');
-          card.style.transform = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px) rotateZ(${rotateZ}deg) rotateY(${rotateY}deg) scale(${scale})`;
-          card.style.opacity = Math.max(0.48, 1 - absOffset * 0.16).toString();
-          card.style.filter = absOffset > 1 ? `brightness(${Math.max(0.72, 1 - absOffset * 0.07)})` : 'none';
+        if (!isAnimating) {
+          renderDeck();
+          updateHoverLayout(activeSlot);
         }
-      });
-    }
-
-    stage.addEventListener('click', function (e) {
-
-      if (e.target.closest('.arc-card-btn')) return;
-
-      const card = e.target.closest('.arc-card');
-      if (!card) return;
-
-      const idx = cards.indexOf(card);
-      if (idx !== -1) {
-        updateDeck(idx);
-      }
-    });
-
-    let touchMoved = false;
-    stage.addEventListener('touchstart', function () {
-      touchMoved = false;
-    }, { passive: true });
-
-    stage.addEventListener('touchmove', function () {
-      touchMoved = true;
-    }, { passive: true });
-
-    stage.addEventListener('touchend', function (e) {
-      if (touchMoved) return;
-      if (e.target.closest('.arc-card-btn')) return;
-
-      const card = e.target.closest('.arc-card');
-      if (!card) return;
-
-      const idx = cards.indexOf(card);
-      if (idx !== -1) {
-        updateDeck(idx);
-      }
-    });
-
-    const prevBtn = document.getElementById('arc-prev-btn');
-    const nextBtn = document.getElementById('arc-next-btn');
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        const targetIdx = (activeIndex - 1 + total) % total;
-        updateDeck(targetIdx);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        const targetIdx = (activeIndex + 1) % total;
-        updateDeck(targetIdx);
-      });
-    }
-
-    stage.setAttribute('tabindex', '0');
-    stage.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft' && activeIndex > 0) {
-        updateDeck(activeIndex - 1);
-        e.preventDefault();
-      } else if (e.key === 'ArrowRight' && activeIndex < total - 1) {
-        updateDeck(activeIndex + 1);
-        e.preventDefault();
-      }
-    });
-
-    let resizeTimer;
-    window.addEventListener('resize', function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        updateDeck(activeIndex);
       }, 100);
     });
 
-    updateDeck(activeIndex);
+    renderDeck();
   }
 
   if (document.readyState === 'loading') {
@@ -277,4 +342,3 @@
     initFanDeck();
   }
 })();
-aab5d36bf9f4dda49b5e76039159195a1b7b8c27
