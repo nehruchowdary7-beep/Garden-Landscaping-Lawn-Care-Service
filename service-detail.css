@@ -45,9 +45,9 @@
   position: relative;
   overflow: hidden;
   padding: 90px 0 80px;
-  background: radial-gradient(circle at 85% 20%, rgba(34, 197, 94, 0.12) 0%, transparent 55%),
+  background: radial-gradient(circle at 85% 20%, rgba(82, 183, 136, 0.12) 0%, transparent 55%),
               linear-gradient(135deg, #07150e 0%, #0d2217 100%);
-  border-bottom: 2px solid rgba(46, 133, 64, 0.35);
+  border-bottom: 2px solid rgba(114, 147, 132, 0.35);
   display: flex;
   align-items: center;
   min-height: 480px;
@@ -144,7 +144,7 @@
 
 .sd-hero-photo-badge span {
   font-size: 0.82rem;
-  color: #86efac;
+  color: #6ec79b;
 }
 
 .sd-hero-title {
@@ -187,7 +187,7 @@
 }
 
 .sd-hero-badge svg {
-  color: #4ade80;
+  color: #52b788;
   width: 15px;
   height: 15px;
   flex-shrink: 0;
@@ -269,7 +269,7 @@
 }
 
 .sd-switcher-btn.active svg {
-  color: #86efac;
+  color: #6ec79b;
 }
 
 .sd-scope-grid {
@@ -409,7 +409,7 @@
 .sd-scope-list svg {
   width: 16px;
   height: 16px;
-  color: #22c55e;
+  color: #52b788;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -611,7 +611,7 @@
 
 .sd-pricing-card.featured {
   border: 2px solid var(--secondary);
-  box-shadow: 0 12px 30px rgba(46, 133, 64, 0.16);
+  box-shadow: 0 12px 30px rgba(114, 147, 132, 0.16);
   background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(82, 183, 136, 0.05) 100%);
 }
 
@@ -657,7 +657,7 @@
 }
 
 [data-theme="dark"] .sd-pricing-rate {
-  color: #4ade80;
+  color: #52b788;
 }
 
 .sd-pricing-features {
@@ -682,7 +682,7 @@
   width: 17px;
   height: 17px;
   min-width: 17px;
-  color: #22c55e;
+  color: #52b788;
   flex-shrink: 0;
 }
 
@@ -716,7 +716,7 @@
 }
 
 [data-theme="dark"] .sd-estimate-num {
-  color: #4ade80;
+  color: #52b788;
 }
 
 .sd-faq-accordion {

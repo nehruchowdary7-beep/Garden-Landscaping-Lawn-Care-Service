@@ -915,7 +915,8 @@ section, .container {
     word-break: break-all !important;
     overflow-wrap: anywhere !important;
   }
-  .contact-map-card {
+  .contact-map-card,
+  .contact-image-card {
     width: 100% !important;
     height: 230px !important;
     min-height: 230px !important;
@@ -923,13 +924,16 @@ section, .container {
     flex: none !important;
     margin-top: 22px !important;
   }
-  .contact-map-card iframe {
+  .contact-map-card iframe,
+  .contact-image-card img {
     width: 100% !important;
     height: 100% !important;
     min-height: 230px !important;
     border: 0;
+    object-fit: cover;
   }
-  .contact-map-badge {
+  .contact-map-badge,
+  .contact-image-badge {
     padding: 8px 12px !important;
     font-size: 0.78rem !important;
   }
@@ -1125,7 +1129,8 @@ section, .container {
   .process-card:hover,
   .gallery-item-card:hover,
   .project-showcase-card:hover,
-  .botanical-card:hover {
+  .botanical-card:hover,
+  .review-card:hover {
     transform: none !important;
   }
   .botanical-card-drawer {

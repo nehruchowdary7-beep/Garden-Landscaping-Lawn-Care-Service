@@ -3,7 +3,7 @@
   overflow: hidden;
   padding: 100px 0 90px;
   background-color: #07150e;
-  border-bottom: 2px solid rgba(46, 133, 64, 0.35);
+  border-bottom: 2px solid rgba(114, 147, 132, 0.35);
   display: flex;
   align-items: center;
   min-height: 520px;
@@ -111,7 +111,7 @@
 }
 
 .services-hero .trust-points-bar .icon {
-  color: #4ade80 !important;
+  color: #52b788 !important;
 }
 
 .services-hero .trust-points-bar span {
@@ -122,7 +122,7 @@
 }
 
 .services-hero .trust-points-bar span.bullet-separator {
-  color: #4ade80 !important;
+  color: #52b788 !important;
   font-weight: 900;
 }
 
@@ -141,7 +141,7 @@
 
 .services-hero-header {
   padding: 60px 0 40px;
-  background: radial-gradient(circle at 90% 10%, rgba(74, 222, 128, 0.1), transparent 50%);
+  background: radial-gradient(circle at 90% 10%, rgba(82, 183, 136, 0.1), transparent 50%);
 }
 
 .service-detail-row {
@@ -187,7 +187,7 @@
   margin-bottom: 12px;
 }
 .service-features-list li svg {
-  color: #22c55e;
+  color: #52b788;
   width: 18px;
   height: 18px;
   flex-shrink: 0;
@@ -200,14 +200,14 @@
   font-weight: 800;
   color: var(--primary, #1b4d3e);
   font-size: 0.95rem;
-  background: var(--accent-subtle, #d8f3dc);
+  background: var(--accent-subtle, #e8efe9);
   padding: 6px 16px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(46, 133, 64, 0.2);
+  border: 1px solid rgba(114, 147, 132, 0.2);
 }
 
 [data-theme="dark"] .service-pricing-tag {
-  background: rgba(74, 222, 128, 0.15);
-  color: #4ade80;
-  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(82, 183, 136, 0.15);
+  color: #52b788;
+  border-color: rgba(82, 183, 136, 0.3);
 }
