@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (baContainer) {
     const rangeInput = baContainer.querySelector('.ba-range-input');
     const beforeImgWrap = baContainer.querySelector('.ba-img-before');
+    const beforeImg = beforeImgWrap ? beforeImgWrap.querySelector('img') : null;
     const handle = baContainer.querySelector('.ba-slider-handle');
 
     if (rangeInput && beforeImgWrap && handle) {
@@ -110,15 +111,19 @@ document.addEventListener('DOMContentLoaded', () => {
           beforeImgWrap.style.width = `${val}%`;
           handle.style.left = `${val}%`;
         }
+        if (beforeImg) {
+          beforeImg.style.width = `${baContainer.clientWidth}px`;
+        }
       };
 
       rangeInput.addEventListener('input', updateSlider);
       window.addEventListener('directionchange', updateSlider);
+      window.addEventListener('resize', updateSlider);
       updateSlider();
     }
   }
 
-  const faqItems = document.querySelectorAll('.faq-item');
+  const faqItems = document.querySelectorAll('.faq-item:not(#sd-faq-accordion .faq-item)');
   faqItems.forEach(item => {
     const trigger = item.querySelector('.faq-trigger');
     if (trigger) {
@@ -154,37 +159,64 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('is-revealed'));
   }
 
+  const animateCounter = (el) => {
+    if (el.dataset.animated === 'true') return;
+    el.dataset.animated = 'true';
+    const target = parseFloat(el.getAttribute('data-target') || '0');
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    const duration = parseInt(el.getAttribute('data-duration') || '1600', 10);
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = Math.max(0, now - startTime);
+      const progress = Math.min(1, elapsed / duration);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const current = progress === 1 ? target : (target * easeOut);
+      const formatted = decimals > 0 
+        ? current.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
+        : Math.round(current).toLocaleString();
+      el.textContent = `${prefix}${formatted}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+    requestAnimationFrame(update);
+  };
+
   const statNumbers = document.querySelectorAll('.stat-number');
-  if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
-    const statsObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const targetNum = parseInt(el.getAttribute('data-target') || '0', 10);
-          const prefix = el.getAttribute('data-prefix') || '';
-          const suffix = el.getAttribute('data-suffix') || '';
-          let count = 0;
-          const duration = 1500;
-          const stepTime = 30;
-          const steps = duration / stepTime;
-          const increment = targetNum / steps;
+  if (statNumbers.length > 0) {
+    const preloader = document.getElementById('page-preloader');
+    let preloaderFinished = !preloader || preloader.classList.contains('is-finished');
 
-          const timer = setInterval(() => {
-            count += increment;
-            if (count >= targetNum) {
-              el.textContent = `${prefix}${targetNum.toLocaleString()}${suffix}`;
-              clearInterval(timer);
-            } else {
-              el.textContent = `${prefix}${Math.floor(count).toLocaleString()}${suffix}`;
+    const initCounters = () => {
+      if ('IntersectionObserver' in window) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
             }
-          }, stepTime);
+          });
+        }, { threshold: 0.1, rootMargin: '150px 0px 150px 0px' });
+        statNumbers.forEach(el => statsObserver.observe(el));
+      } else {
+        statNumbers.forEach(el => animateCounter(el));
+      }
+    };
 
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    statNumbers.forEach(el => statsObserver.observe(el));
+    if (preloaderFinished) {
+      initCounters();
+    } else {
+      const trigger = () => {
+        if (preloaderFinished) return;
+        preloaderFinished = true;
+        initCounters();
+      };
+      window.addEventListener('preloaderDone', trigger, { once: true });
+      setTimeout(trigger, 1100);
+    }
   }
 
   const contactForm = document.getElementById('contact-form');

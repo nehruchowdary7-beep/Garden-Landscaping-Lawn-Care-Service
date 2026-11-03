@@ -144,7 +144,7 @@
   margin-bottom: 6px;
 }
 [data-theme="dark"] .stat-number {
-  color: #52b788;
+  color: var(--primary);
 }
 .stat-label {
   font-size: 0.9rem;
@@ -313,17 +313,6 @@
   align-items: center;
   gap: 12px;
   margin-top: 22px;
-}
-
-.showcase-actions .btn {
-  padding: 0.52rem 1.25rem;
-  font-size: 0.88rem;
-  font-weight: 700;
-}
-
-.showcase-actions .btn .icon {
-  width: 14px;
-  height: 14px;
 }
 
 .showcase-split-visual {

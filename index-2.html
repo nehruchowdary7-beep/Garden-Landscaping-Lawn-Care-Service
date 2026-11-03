@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="utf-8">
@@ -8,11 +8,11 @@
   <meta name="color-scheme" content="light dark">
 
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,6 +76,7 @@
         isDone = true;
         if (barFill) barFill.style.width = '100%';
         if (counter) counter.textContent = '100%';
+        window.dispatchEvent(new CustomEvent('preloaderDone'));
 
         setTimeout(function() {
           preloader.classList.add('fade-content');
@@ -93,7 +94,7 @@
 
       function step(currentTime) {
         if (isDone) return;
-        var elapsed = currentTime - startTime;
+        var elapsed = Math.max(0, currentTime - startTime);
         var percent = Math.min(100, Math.floor((elapsed / duration) * 100));
 
         if (barFill) barFill.style.width = percent + '%';
@@ -117,8 +118,8 @@
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="VerdantCraft Home">
         <div class="brand-logo-badge">
-          <img src="logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
-          <img src="logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
+          <img src="images/logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
+          <img src="images/logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
         </div>
         <div>
           <span class="brand-name">Verdant<span>Craft</span></span>
@@ -178,15 +179,12 @@
 
     <section class="home2-hero" aria-label="Architectural Estates Introduction">
       <div class="home2-hero-bg">
-        <img src="estate-hero.jpg" alt="Prestigious contemporary luxury architectural estate with illuminated terrace and manicured lawn" class="home2-hero-img">
+        <img src="images/estate-hero.jpg" alt="Prestigious contemporary luxury architectural estate with illuminated terrace and manicured lawn" class="home2-hero-img">
         <div class="home2-hero-overlay"></div>
       </div>
       <div class="container">
         <div class="home2-hero-content" data-reveal="fade-up">
-          <span class="luxury-eyebrow">
-            <svg class="icon" style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Master Estate &amp; Commercial Landscape Architecture
-          </span>
+          <span class="luxury-eyebrow">Master Estate &amp; Commercial Landscape Architecture</span>
           <h1 class="home2-hero-title">
             Architectural Elegance for <span class="text-gradient">Prestigious Estates</span>
           </h1>
@@ -203,6 +201,8 @@
               <span>View Estate Portfolio</span>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
+          </div>
+
           </div>
         </div>
       </div>
@@ -222,7 +222,7 @@
 
           <article class="monolith-card" data-reveal>
             <div class="monolith-media-wrap">
-              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80" alt="Architectural bluestone patio and modern outdoor hearth" class="monolith-card-img" loading="lazy">
+              <img src="images/photo-1600596542815-ffad4c1539a9.jpg" alt="Architectural bluestone patio and modern outdoor hearth" class="monolith-card-img" loading="lazy">
               <div class="monolith-overlay"></div>
             </div>
             <div class="monolith-top-meta">
@@ -265,7 +265,7 @@
 
           <article class="monolith-card" data-reveal>
             <div class="monolith-media-wrap">
-              <img src="https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=900&q=80" alt="Laser-graded estate turf cultivation and agronomy" class="monolith-card-img" loading="lazy">
+              <img src="images/photo-1594498653385-d5172c532c00.jpg" alt="Laser-graded estate turf cultivation and agronomy" class="monolith-card-img" loading="lazy">
               <div class="monolith-overlay"></div>
             </div>
             <div class="monolith-top-meta">
@@ -308,7 +308,7 @@
 
           <article class="monolith-card" data-reveal>
             <div class="monolith-media-wrap">
-              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=900&q=80" alt="Luxury reflection pool, architectural stone patio and natural water feature" class="monolith-card-img" loading="lazy">
+              <img src="images/photo-1576013551627-0cc20b96c2a7.jpg" alt="Luxury reflection pool, architectural stone patio and natural water feature" class="monolith-card-img" loading="lazy">
               <div class="monolith-overlay"></div>
             </div>
             <div class="monolith-top-meta">
@@ -409,7 +409,7 @@
         <div class="estate-showcase-grid">
 
           <div class="estate-portfolio-card card-wide" data-reveal>
-            <img class="estate-portfolio-bg" src="https://images.unsplash.com/photo-1674672670977-bcf517fc2376?auto=format&fit=crop&w=1200&q=80" alt="Natural bluestone outdoor living patio with custom hearth" loading="lazy">
+            <img class="estate-portfolio-bg" src="images/photo-1674672670977-bcf517fc2376.jpg" alt="Natural bluestone outdoor living patio with custom hearth" loading="lazy">
             <div class="estate-portfolio-overlay"></div>
 
             <div class="estate-portfolio-top">
@@ -438,7 +438,7 @@
           </div>
 
           <div class="estate-portfolio-card" data-reveal>
-            <img class="estate-portfolio-bg" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80" alt="Pristine green estate turf with architectural lines" loading="lazy">
+            <img class="estate-portfolio-bg" src="images/photo-1570129477492-45c003edd2be.jpg" alt="Pristine green estate turf with architectural lines" loading="lazy">
             <div class="estate-portfolio-overlay"></div>
 
             <div class="estate-portfolio-top">
@@ -465,7 +465,7 @@
           </div>
 
           <div class="estate-portfolio-card" data-reveal>
-            <img class="estate-portfolio-bg" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Living pool terrace and manicured garden" loading="lazy">
+            <img class="estate-portfolio-bg" src="images/photo-1600607687920-4e2a09cf159d.jpg" alt="Living pool terrace and manicured garden" loading="lazy">
             <div class="estate-portfolio-overlay"></div>
 
             <div class="estate-portfolio-top">
@@ -492,7 +492,7 @@
           </div>
 
           <div class="estate-portfolio-card card-full" data-reveal>
-            <img class="estate-portfolio-bg" src="sunset-ridge-bioswale.jpg" alt="Zero-waste telemetry irrigation and native retention bioswales on expansive 14-acre estate grounds under morning sunrise" loading="lazy">
+            <img class="estate-portfolio-bg" src="images/sunset-ridge-bioswale.jpg" alt="Zero-waste telemetry irrigation and native retention bioswales on expansive 14-acre estate grounds under morning sunrise" loading="lazy">
             <div class="estate-portfolio-overlay"></div>
 
             <div class="estate-portfolio-top">
@@ -591,7 +591,7 @@
 
           <div class="eco-split-visual">
             <div class="eco-visual-frame">
-              <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=900&q=80" alt="Commercial electric precision mowing equipment on luxury estate" class="eco-master-img" loading="lazy">
+              <img src="images/photo-1622383563227-04401ab4e5ea.jpg" alt="Commercial electric precision mowing equipment on luxury estate" class="eco-master-img" loading="lazy">
 
               <div class="eco-float-badge badge-top">
                 <div class="eco-live-dot"></div>
@@ -612,17 +612,17 @@
 
             <div class="eco-stats-bar">
               <div class="eco-stat-item">
-                <span class="eco-stat-number">&lt; 68 dB</span>
+                <span class="eco-stat-number stat-number" data-prefix="&lt; " data-target="68" data-suffix=" dB">&lt; 0 dB</span>
                 <span class="eco-stat-label">Library Quiet</span>
               </div>
               <div class="eco-stat-sep"></div>
               <div class="eco-stat-item">
-                <span class="eco-stat-number">42%</span>
+                <span class="eco-stat-number stat-number" data-target="42" data-suffix="%">0%</span>
                 <span class="eco-stat-label">Water Conserved</span>
               </div>
               <div class="eco-stat-sep"></div>
               <div class="eco-stat-item">
-                <span class="eco-stat-number">100%</span>
+                <span class="eco-stat-number stat-number" data-target="100" data-suffix="%">0%</span>
                 <span class="eco-stat-label">Organic Safe</span>
               </div>
             </div>
@@ -651,7 +651,7 @@
             </div>
             <p class="review-text">"VerdantCraft manages our 6-acre private estate with obsessive attention to architectural detail. Their zero-emission whisper fleet allows our family to enjoy tranquil mornings completely undisturbed."</p>
             <div class="review-author">
-              <img class="review-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80" alt="Julian Vance" loading="lazy">
+              <img class="review-avatar" src="images/photo-1472099645785-5658abf4ff4e.jpg" alt="Julian Vance" loading="lazy">
               <div class="review-info">
                 <h4>Julian Vance</h4>
                 <p>Estate Director &bull; Bel Air Holdings</p>
@@ -669,7 +669,7 @@
             </div>
             <p class="review-text">"As an architect, finding landscape contractors who respect clean lines and precision stone alignment is rare. VerdantCraft executed our natural bluestone terrace and reflecting pool flawlessly."</p>
             <div class="review-author">
-              <img class="review-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80" alt="Elena Rostova" loading="lazy">
+              <img class="review-avatar" src="images/photo-1544005313-94ddf0286df2.jpg" alt="Elena Rostova" loading="lazy">
               <div class="review-info">
                 <h4>Elena Rostova</h4>
                 <p>Principal Architect &bull; Studio Forma</p>
@@ -687,7 +687,7 @@
             </div>
             <p class="review-text">"Their soil telemetry and master agronomist brought our rolling 10-acre estate into a more than championship fairway perfection within one season. Pure white-glove professionalism."</p>
             <div class="review-author">
-              <img class="review-avatar" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&h=150&q=80" alt="Harrison Sterling" loading="lazy">
+              <img class="review-avatar" src="images/photo-1522075469751-3a6694fb2f61.jpg" alt="Harrison Sterling" loading="lazy">
               <div class="review-info">
                 <h4>Harrison Sterling</h4>
                 <p>Private Residence Owner &bull; Highland</p>
@@ -702,10 +702,7 @@
       <div class="container">
         <div class="home2-cta-box" data-reveal>
           <div class="home2-cta-content">
-            <span class="luxury-eyebrow">
-              <svg class="icon" style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Private Consultations By Appointment
-            </span>
+            <span class="luxury-eyebrow">Private Consultations By Appointment</span>
             <h2 class="home2-cta-title">
               Elevate Your Grounds to an <span class="text-gradient">Architectural Masterpiece</span>
             </h2>
@@ -725,7 +722,7 @@
           </div>
           <div class="home2-cta-visual">
             <div class="home2-cta-img-wrap">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Luxury contemporary landscape architecture with stone patio and garden" class="home2-cta-img" loading="lazy">
+              <img src="images/photo-1600607687939-ce8a6c25118c.jpg" alt="Luxury contemporary landscape architecture with stone patio and garden" class="home2-cta-img" loading="lazy">
               <div class="home2-cta-badge">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                 <span>Discreet &amp; Confidential</span>
@@ -743,8 +740,8 @@
         <div class="footer-about">
           <a class="brand" href="index.html" style="margin-bottom: 16px;" aria-label="VerdantCraft Home">
             <div class="brand-logo-badge">
-              <img src="logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
-              <img src="logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
+              <img src="images/logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
+              <img src="images/logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
             </div>
             <div>
               <span class="brand-name">Verdant<span>Craft</span></span>

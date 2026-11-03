@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="utf-8">
@@ -8,11 +8,11 @@
   <meta name="color-scheme" content="light dark">
 
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,6 +79,7 @@
         isDone = true;
         if (barFill) barFill.style.width = '100%';
         if (counter) counter.textContent = '100%';
+        window.dispatchEvent(new CustomEvent('preloaderDone'));
 
         setTimeout(function() {
           preloader.classList.add('fade-content');
@@ -96,7 +97,7 @@
 
       function step(currentTime) {
         if (isDone) return;
-        var elapsed = currentTime - startTime;
+        var elapsed = Math.max(0, currentTime - startTime);
         var percent = Math.min(100, Math.floor((elapsed / duration) * 100));
 
         if (barFill) barFill.style.width = percent + '%';
@@ -120,8 +121,8 @@
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="VerdantCraft Home">
         <div class="brand-logo-badge">
-          <img src="logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
-          <img src="logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
+          <img src="images/logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
+          <img src="images/logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
         </div>
         <div>
           <span class="brand-name">Verdant<span>Craft</span></span>
@@ -182,10 +183,7 @@
     <section class="hero-section" aria-label="Hero Introduction">
       <div class="container hero-grid">
         <div class="hero-content" data-reveal="left">
-          <span class="eyebrow">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            Eco-Friendly Lawn &amp; Landscape Architecture
-          </span>
+          <span class="eyebrow">Eco-Friendly Lawn &amp; Landscape Architecture</span>
           <h1>Transform Your Yard Into a <span class="text-gradient">Living Sanctuary</span></h1>
           <p class="lead">
             From precision weekly mowing and smart irrigation to award-winning custom stone patios and seasonal cleanups. We bring healthy vibrance and timeless architectural elegance to your outdoor living spaces.
@@ -208,7 +206,7 @@
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div>
-                <strong>100% Licensed &amp; Insured</strong><br>
+                <strong><span class="stat-number" data-target="100" data-suffix="%">0%</span> Licensed &amp; Insured</strong><br>
                 <span>Full property protection</span>
               </div>
             </div>
@@ -226,11 +224,13 @@
 
         <div class="hero-visual" data-reveal="right">
           <div class="hero-image-wrap">
-            <img src="hero-patio-sanctuary.jpg" alt="Luxury modern outdoor patio living area with fire pit and manicured garden" loading="eager">
+            <img src="images/hero-patio-sanctuary.jpg" alt="Luxury modern outdoor patio living area with fire pit and manicured garden" loading="eager">
           </div>
         </div>
       </div>
     </section>
+
+   
 
     <section class="section" aria-label="Core Landscaping and Lawn Services">
       <div class="container">
@@ -247,7 +247,7 @@
           <article class="service-card interactive-card" data-reveal>
             <div class="service-card-image">
               <span class="service-badge">Weekly / Bi-Weekly</span>
-              <img src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&w=700&q=80" alt="Precision lawn mowing and sidewalk edging service">
+              <img src="images/photo-1557429287-b2e26467fc2b.jpg" alt="Precision lawn mowing and sidewalk edging service">
             </div>
             <div class="service-card-body">
               <div class="service-icon-wrap">
@@ -270,7 +270,7 @@
           <article class="service-card interactive-card" data-reveal>
             <div class="service-card-image">
               <span class="service-badge">Custom Architecture</span>
-              <img src="landscape-design-garden.jpg" alt="Artisan landscape design with manicured cypress, sculpted boxwood topiaries, hydrangeas, and perennial garden bed" loading="lazy">
+              <img src="images/landscape-design-garden.jpg" alt="Artisan landscape design with manicured cypress, sculpted boxwood topiaries, hydrangeas, and perennial garden bed" loading="lazy">
             </div>
             <div class="service-card-body">
               <div class="service-icon-wrap">
@@ -293,7 +293,7 @@
           <article class="service-card interactive-card" data-reveal>
             <div class="service-card-image">
               <span class="service-badge">Water Conservation</span>
-              <img src="https://images.unsplash.com/photo-1780098847544-eb3867cc0e1c?auto=format&fit=crop&w=700&q=80" alt="Smart automated pop-up lawn sprinkler system watering lush green turf in warm sunlight" loading="lazy">
+              <img src="images/photo-1780098847544-eb3867cc0e1c.jpg" alt="Smart automated pop-up lawn sprinkler system watering lush green turf in warm sunlight" loading="lazy">
             </div>
             <div class="service-card-body">
               <div class="service-icon-wrap">
@@ -365,13 +365,13 @@
 
           <div class="showcase-split-visual" data-reveal="right">
             <div class="showcase-img-frame">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Completed residential landscape makeover featuring covered outdoor patio terrace, manicured green turf, and garden walkway" loading="lazy">
+              <img src="images/photo-1600585154340-be6161a56a0c.jpg" alt="Completed residential landscape makeover featuring covered outdoor patio terrace, manicured green turf, and garden walkway" loading="lazy">
               <div class="showcase-floating-badge">
                 <div class="showcase-badge-icon">
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
                 <div>
-                  <div class="showcase-badge-title">250+ Makeovers</div>
+                  <div class="showcase-badge-title"><span class="stat-number" data-target="250" data-suffix="+">0+</span> Makeovers</div>
                   <div class="showcase-badge-sub">Award-Winning Residential Quality</div>
                 </div>
               </div>
@@ -397,7 +397,7 @@
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 <span>68 dB Whisper Quiet</span>
               </span>
-              <img src="commercial-mowers-fleet.jpg" alt="Fleet of commercial precision mowers on manicured green lawn" loading="lazy">
+              <img src="images/commercial-mowers-fleet.jpg" alt="Fleet of commercial precision mowers on manicured green lawn" loading="lazy">
             </div>
             <div class="eco-card-body">
               <span class="eco-card-tag">
@@ -431,7 +431,7 @@
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
                 <span>NOAA Satellite Synced</span>
               </span>
-              <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=700&q=80" alt="Precision smart water management system and rain sensors" loading="lazy">
+              <img src="images/photo-1509316975850-ff9c5deb0cd9.jpg" alt="Precision smart water management system and rain sensors" loading="lazy">
             </div>
             <div class="eco-card-body">
               <span class="eco-card-tag">
@@ -465,7 +465,7 @@
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 <span>100% Pet &amp; Child Safe</span>
               </span>
-              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=700&q=80" alt="Pet and child playing safely on organic treated lawn" loading="lazy">
+              <img src="images/photo-1416879595882-3373a0480b5b.jpg" alt="Pet and child playing safely on organic treated lawn" loading="lazy">
             </div>
             <div class="eco-card-body">
               <span class="eco-card-tag">
@@ -515,7 +515,7 @@ Cold-pressed ocean kelp, humic acid, and compost teas feed beneficial undergroun
             </div>
             <p class="review-text">"VerdantCraft completely revamped our backyard with a natural stone patio and lush new sod. Their crew showed up at 7:30 sharp every morning, kept the property clean, and finished ahead of schedule."</p>
             <div class="review-author">
-              <img class="review-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Reynolds">
+              <img class="review-avatar" src="images/photo-1507003211169-0a1dd7228f2d.jpg" alt="Marcus Reynolds">
               <div class="review-info">
                 <h4>Marcus Reynolds</h4>
                 <p>Highland Hills &bull; Full Landscape &amp; Patio</p>
@@ -533,7 +533,7 @@ Cold-pressed ocean kelp, humic acid, and compost teas feed beneficial undergroun
             </div>
             <p class="review-text">"Our lawn was overtaken by crabgrass and dandelion. Within two cycles of their organic fertilization and aeration plan, it looks like a championship fairway. Highly recommended!"</p>
             <div class="review-author">
-              <img class="review-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins-Lin">
+              <img class="review-avatar" src="images/photo-1534528741775-53994a69daeb.jpg" alt="Sarah Jenkins-Lin">
               <div class="review-info">
                 <h4>Sarah Jenkins-Lin</h4>
                 <p>Oakwood Estates &bull; Weekly Lawn Care</p>
@@ -551,7 +551,7 @@ Cold-pressed ocean kelp, humic acid, and compost teas feed beneficial undergroun
             </div>
             <p class="review-text">"The online booking and cost estimator was so simple to use. No pushy salesmen, just honest transparent pricing relaxing space with exceptional and delivered outstanding results. Best service in town."</p>
             <div class="review-author">
-              <img class="review-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="David Thompson">
+              <img class="review-avatar" src="images/photo-1500648767791-00dcc994a43e.jpg" alt="David Thompson">
               <div class="review-info">
                 <h4>David Thompson</h4>
                 <p>Riverdale Valley &bull; Seasonal Maintenance</p>
@@ -562,7 +562,7 @@ Cold-pressed ocean kelp, humic acid, and compost teas feed beneficial undergroun
       </div>
     </section>
 
-    <section class="cta-banner-lush" style="background-image: url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=80');">
+    <section class="cta-banner-lush" style="background-image: url('images/photo-1600585152220-90363fe7e115.jpg');">
       <div class="container text-center" data-reveal>
         <span class="eyebrow" style="background: rgba(255,255,255,0.18); color: #86efac;">Ready for a greener yard?</span>
         <h2 style="color:#ffffff; margin: 20px 0 16px;">Schedule Your Free Property Assessment Today</h2>
@@ -589,8 +589,8 @@ Cold-pressed ocean kelp, humic acid, and compost teas feed beneficial undergroun
         <div class="footer-about">
           <a class="brand" href="index.html" style="margin-bottom: 16px;" aria-label="VerdantCraft Home">
             <div class="brand-logo-badge">
-              <img src="logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
-              <img src="logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
+              <img src="images/logo-light.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-light">
+              <img src="images/logo-dark.png" alt="VerdantCraft Logo" class="brand-logo-img theme-logo-dark">
             </div>
             <div>
               <span class="brand-name">Verdant<span>Craft</span></span>

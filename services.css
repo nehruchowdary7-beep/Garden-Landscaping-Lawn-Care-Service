@@ -73,36 +73,6 @@
   margin-bottom: 24px;
 }
 
-.services-hero-cta .btn-secondary,
-.services-hero-cta .btn-outline-light {
-  color: #ffffff !important;
-  border: 2px solid rgba(255, 255, 255, 0.75) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  font-weight: 700;
-  transition: all var(--transition-fast);
-}
-
-.services-hero-cta .btn-secondary:hover,
-.services-hero-cta .btn-outline-light:hover {
-  background: #ffffff !important;
-  color: #0b1410 !important;
-  border-color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.services-hero-cta .btn-secondary *,
-.services-hero-cta .btn-outline-light * {
-  color: #ffffff !important;
-}
-
-.services-hero-cta .btn-secondary:hover *,
-.services-hero-cta .btn-outline-light:hover * {
-  color: #0b1410 !important;
-}
-
 .services-hero .trust-points-bar {
   color: #e2e8f0 !important;
   font-size: 0.92rem;
