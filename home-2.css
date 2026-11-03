@@ -116,26 +116,26 @@ html[dir="rtl"] .home2-hero-overlay {
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: var(--accent-subtle, #e8efe9);
-  color: var(--primary, #1b4d3e);
-  border: 1px solid rgba(114, 147, 132, 0.2);
+  background: #729384;
+  color: #ffffff;
+  border: 1px solid #729384;
   margin-bottom: 14px;
 }
 
 .luxury-eyebrow svg {
-  color: var(--primary, #1b4d3e);
-  stroke: var(--primary, #1b4d3e);
+  color: #ffffff;
+  stroke: #ffffff;
 }
 
 [data-theme="dark"] .luxury-eyebrow {
-  background: rgba(82, 183, 136, 0.15);
-  color: #52b788;
-  border-color: rgba(82, 183, 136, 0.3);
+  background: #729384;
+  color: #ffffff;
+  border-color: #729384;
 }
 
 [data-theme="dark"] .luxury-eyebrow svg {
-  color: #52b788;
-  stroke: #52b788;
+  color: #ffffff;
+  stroke: #ffffff;
 }
 
 .home2-hero-title {

@@ -92,21 +92,23 @@ p {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--primary);
-  background: var(--accent-subtle);
-  border: 1px solid rgba(46, 133, 64, 0.2);
+  color: #ffffff;
+  background: #729384;
+  border: 1px solid #729384;
   padding: 6px 14px;
   border-radius: var(--radius-full);
   margin-bottom: 1rem;
 }
 [data-theme="dark"] .eyebrow {
-  color: #4ade80;
-  background: rgba(74, 222, 128, 0.15);
-  border-color: rgba(74, 222, 128, 0.3);
+  color: #ffffff;
+  background: #729384;
+  border-color: #729384;
 }
 
 .eyebrow,
 .luxury-eyebrow,
+.about-hero-eyebrow-pill,
+#sd-hero-eyebrow,
 .tag-pill,
 .estate-tag-pill,
 .estate-meta-pill,
@@ -124,15 +126,17 @@ p {
 .zone-badge,
 .zone-metric-pill,
 .eco-pill {
-  color: var(--primary, #1b4d3e) !important;
-  background: var(--accent-subtle, #d8f3dc) !important;
-  border: 1px solid rgba(46, 133, 64, 0.2) !important;
+  color: #ffffff !important;
+  background: #729384 !important;
+  border: 1px solid #729384 !important;
   width: fit-content;
   max-width: fit-content;
 }
 
 .eyebrow svg,
 .luxury-eyebrow svg,
+.about-hero-eyebrow-pill svg,
+#sd-hero-eyebrow svg,
 .tag-pill svg,
 .estate-tag-pill svg,
 .estate-meta-pill svg,
@@ -150,12 +154,14 @@ p {
 .zone-badge svg,
 .zone-metric-pill svg,
 .eco-pill svg {
-  color: var(--primary, #1b4d3e) !important;
-  stroke: var(--primary, #1b4d3e) !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 [data-theme="dark"] .eyebrow,
 [data-theme="dark"] .luxury-eyebrow,
+[data-theme="dark"] .about-hero-eyebrow-pill,
+[data-theme="dark"] #sd-hero-eyebrow,
 [data-theme="dark"] .tag-pill,
 [data-theme="dark"] .estate-tag-pill,
 [data-theme="dark"] .estate-meta-pill,
@@ -173,13 +179,15 @@ p {
 [data-theme="dark"] .zone-badge,
 [data-theme="dark"] .zone-metric-pill,
 [data-theme="dark"] .eco-pill {
-  color: #4ade80 !important;
-  background: rgba(74, 222, 128, 0.15) !important;
-  border: 1px solid rgba(74, 222, 128, 0.3) !important;
+  color: #ffffff !important;
+  background: #729384 !important;
+  border: 1px solid #729384 !important;
 }
 
 [data-theme="dark"] .eyebrow svg,
 [data-theme="dark"] .luxury-eyebrow svg,
+[data-theme="dark"] .about-hero-eyebrow-pill svg,
+[data-theme="dark"] #sd-hero-eyebrow svg,
 [data-theme="dark"] .tag-pill svg,
 [data-theme="dark"] .estate-tag-pill svg,
 [data-theme="dark"] .estate-meta-pill svg,
@@ -197,8 +205,8 @@ p {
 [data-theme="dark"] .zone-badge svg,
 [data-theme="dark"] .zone-metric-pill svg,
 [data-theme="dark"] .eco-pill svg {
-  color: #4ade80 !important;
-  stroke: #4ade80 !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 .text-primary,
